@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "FOTRodinNTLG DB";
+  src: url("../../fonts/FOTRodinNTLG Pro DB.otf") format("opentype");
+}
+.home-btn {
+  border: #34beed solid 4px;
+  border-radius: 50%;
+  background-color: #dedede;
+  width: 300px;
+  height: 300px;
+  box-shadow: 18px 18px 2px -3px #BCBDC3, inset -5px -20px 50px 0px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.home-btn img {
+  width: 71%;
+  height: 71%;
+  position: relative;
+  right: 11%;
+  top: -11%;
+}
+
+.menu-btn {
+  position: relative;
+  width: 546px;
+  height: 148px;
+  background: #E3E8EF;
+  opacity: 0.9;
+  border: 4px solid #34BEED;
+  box-shadow: 0px 0px 5px #34BEED, inset 10px 9px 60px #FFFFFF, inset 0px -10px 19px 16px #B1BCCA;
+  border-radius: 100px;
+  font-family: "FOTRodinNTLG DB", sans-serif;
+  font-size: 59px;
+  color: #353a3b;
+}
+.menu-btn img {
+  position: absolute;
+  z-index: -1;
+  right: 8%;
+  top: 4%;
+}
+
+/* Button Wii Menu */
+/* Vector 3 */
+/* Wii Menu */
+/* identical to box height */
+
+/*# sourceMappingURL=reusuable-components.css.map */
