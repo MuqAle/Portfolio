@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "FOTRodinNTLGProDB";
+  src: url("../../fonts/FOTRodinNTLGProDB/FOTRodinNTLGProDB.otf") format("opentype"), url("../../fonts/FOTRodinNTLGProDB/RodinNTLGPro-DB-AlphaNum.woff") format("woff"), url("../../fonts/FOTRodinNTLGProDB/RodinNTLGPro-DB-AlphaNum.woff2") format("woff2");
+}
+#navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#navigation #navigation-date {
+  font-family: "FOTRodinNTLGProDB", sans-serif;
+  font-size: 2.8cqw;
+  text-wrap: nowrap;
+  margin-top: 5%;
+  color: #787879;
+}
+#navigation .navigation-btn-container {
+  width: 29vw;
+  width: 29dvw;
+  height: 23vh;
+  height: 23dvh;
+  margin-top: -1cqh;
+  border-radius: 100rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4117647059) 25%, #D2D4DB 100%);
+  position: relative;
+  border: #B3B5BC solid;
+  border-width: 1.2vw 0.9vw;
+  position: relative;
+  filter: blur(0.07vw);
+}
+#navigation .navigation-btn-container.left {
+  left: -12.5%;
+}
+#navigation .navigation-btn-container.right {
+  right: -12.5%;
+}
+#navigation .navigation-btn-container:before {
+  content: "";
+  position: absolute;
+  border: rgba(255, 255, 255, 0.5882352941) solid 0.5vw;
+  top: -0.9vw;
+  left: -0.4vw;
+  bottom: -0.7vw;
+  right: -0.4vw;
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 100rem;
+  filter: blur(0.12vw);
+}
+
+@supports (width: 1cqw) {
+  #navigation .navigation-btn-container {
+    width: 29cqw;
+    height: 23cqh;
+  }
+}
+
+/*# sourceMappingURL=navigation.css.map */
