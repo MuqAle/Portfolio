@@ -1,22 +1,66 @@
 @font-face {
   font-family: "FOTRodinNTLG DB";
-  src: url("../../fonts/FOTRodinNTLG Pro DB.otf") format("opentype");
+  src: url("../../fonts/FOTRodinNTLGProDB.otf") format("opentype"), url("../../fonts/FOTRodinNTLGPro/FOTRodinNTLGProDB/RodinNTLGPro-DB-AlphaNum.woff") format("woff"), url("../../fonts/FOTRodinNTLGPro/FOTRodinNTLGProDB/RodinNTLGPro-DB-AlphaNum.woff2") format("woff2");
 }
+@font-face {
+  font-family: "WiiSans-Regular";
+  src: url("../../fonts/WiiSans-Regular-4.otf") format("opentype");
+}
+/* Ellipse 5 */
 .home-btn {
-  border: #34beed solid 4px;
+  border: #34beed solid 0.29vw;
   border-radius: 50%;
-  background-color: #dedede;
-  width: 300px;
-  height: 300px;
-  box-shadow: 18px 18px 2px -3px #BCBDC3, inset -5px -20px 50px 0px rgba(0, 0, 0, 0.2);
+  background-color: #f5f4f4;
+  aspect-ratio: 1/1;
+  height: 18.3333333333vh;
+  box-shadow: 0.7cqw 0.8cqw 0.1cqw -0.2cqw rgba(0, 0, 0, 0.1294117647), inset 0 0 0.6cqw 0.8cqw rgba(0, 0, 0, 0.054), inset -3cqw -3cqw 0.5cqw 0cqw rgba(0, 0, 0, 0.05);
   position: relative;
+  z-index: 1;
+  margin-top: -0.7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.home-btn img {
-  width: 71%;
-  height: 71%;
-  position: relative;
-  right: 11%;
-  top: -11%;
+.home-btn.large {
+  height: 20vh;
+  transform: rotate(180deg);
+  margin-right: -1.3%;
+  margin-top: 2%;
+}
+.home-btn.large img:last-child {
+  width: 60%;
+  aspect-ratio: 53/38;
+}
+.home-btn.small {
+  transform: rotate(180deg);
+  height: 15.7142857143vh;
+}
+.home-btn.small img:last-child {
+  aspect-ratio: 54/53;
+  width: 45%;
+}
+.home-btn p {
+  z-index: 0;
+  text-align: center;
+  font-family: "WiiSans-Regular", sans-serif;
+  font-size: 5.4166666667vh;
+  color: #999999;
+}
+.home-btn .btn-highlight {
+  aspect-ratio: 54/52;
+  width: 66%;
+  position: absolute;
+  right: 29%;
+  top: 6.5%;
+  z-index: 1;
+}
+
+.navigation-btn-container.right .medium {
+  margin-left: 1%;
+}
+.navigation-btn-container.right .medium img:last-child {
+  aspect-ratio: 96/64;
+  width: 50%;
 }
 
 .menu-btn {
@@ -33,15 +77,12 @@
   color: #353a3b;
 }
 .menu-btn img {
+  aspect-ratio: 493/93;
+  width: 447px;
   position: absolute;
   z-index: -1;
   right: 8%;
   top: 4%;
 }
-
-/* Button Wii Menu */
-/* Vector 3 */
-/* Wii Menu */
-/* identical to box height */
 
 /*# sourceMappingURL=reusuable-components.css.map */

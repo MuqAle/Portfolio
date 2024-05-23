@@ -17,7 +17,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
 }
 
 .main-container{
@@ -55,7 +54,7 @@
     .top-part{
         background-color: #f8f8f8;
         z-index: 3;
-        background-image: url(../../images/home-menu/abc.svg);
+        background-image: url(../../images/home-menu/background-lines.svg);
         background-position: center center;
         background-size:100% auto;
 
@@ -78,7 +77,8 @@
 
 .time-container{
     display: flex;
-    align-items: flex-end;
+    align-self: start;
+    align-items: end;
     justify-content: center;
     gap: 1vw;
     gap: 1dvw;
@@ -92,6 +92,7 @@
         font-size: 7vw;
         font-size: 7dvw;
         color: #9B9B9B;
+        margin-top: auto;
     }
 
     .time-period{
