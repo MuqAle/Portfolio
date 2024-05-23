@@ -19,29 +19,38 @@ const Navigation = () => {
     
     return(
         <nav id="navigation">
-            <BtnContainer side={"left"}>
+            <div className="navigation-big-container">
+                <BtnContainer side={"left"}>
                 <div className="navigation-small-btn-container">
+                <HomeBtn type="small">
+                        <img src={contact} alt="Page with a pen on top" />
+                    </HomeBtn>
                     <HomeBtn type="small">
                         <img src={calender} alt="Calender" />
                     </HomeBtn>
-                    <HomeBtn type="small">
-                        <img src={contact} alt="Page with a pen on top" />
-                    </HomeBtn>
                 </div>
+            </BtnContainer>
+            <BtnContainer side="right">
                 <HomeBtn type="medium">
                     <p>Muq</p>
                 </HomeBtn>
-                
             </BtnContainer>
+            </div>
             <p id="navigation-date">{date[0]} {date[1]}</p>
-            <BtnContainer side={"right"}>
-                <HomeBtn type="medium">
-                    <img src={envelope} alt="envelope" />
-                </HomeBtn>
-                <HomeBtn type="large">
-                    <img src={home} alt="Box with muq written on it" />
-                </HomeBtn>
-            </BtnContainer>
+            <div className="navigation-big-container">
+                <BtnContainer side={"left"}>
+                    <HomeBtn type="medium">
+                        <img src={envelope} alt="envelope" />
+                    </HomeBtn>
+                </BtnContainer>
+                <BtnContainer side="right">
+                    <HomeBtn type="large">
+                        <img src={home} alt="Box with muq written on it" />
+                    </HomeBtn>
+                </BtnContainer>
+            </div>
+                
+            
         </nav>
     )
     

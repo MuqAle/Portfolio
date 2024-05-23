@@ -8,6 +8,9 @@
   justify-content: space-between;
   z-index: 2;
 }
+#navigation .navigation-big-container {
+  display: flex;
+}
 #navigation #navigation-date {
   font-family: "FOTRodinNTLGProB", sans-serif;
   font-size: 2.8cqw;
@@ -19,45 +22,49 @@
   height: 22vh;
   height: 22dvh;
   margin-top: -1cqh;
-  border-radius: 100rem;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.4117647059) 25%, #D2D4DB 100%);
   position: relative;
-  border: #b3b6bc solid;
-  border-width: 0.5vw;
   display: flex;
-  justify-content: space-between;
   align-items: start;
+  border-top: #b3b6bc solid 0.5vw;
+  border-bottom: #b3b6bc solid 0.5vw;
   position: relative;
 }
 #navigation .navigation-btn-container.left {
-  width: 48dvw;
-  padding-right: 1%;
-}
-#navigation .navigation-btn-container.right {
-  width: 34dvw;
-}
-#navigation .navigation-btn-container::before {
-  content: "";
-  position: absolute;
-  border: rgba(241, 241, 241, 0.2941176471) solid 0.5vw;
-  border-radius: 100rem;
+  border-left: #b3b6bc solid 0.5vw;
+  border-radius: 100rem 0rem 0rem 100rem;
 }
 #navigation .navigation-btn-container.left::before {
+  border-left: rgba(241, 241, 241, 0.2941176471) solid 0.5vw;
+  border-radius: 100rem 0rem 0rem 100rem;
   top: 0.5vw;
   left: 0.25vw;
   bottom: -1vw;
   right: 0.25vw;
   pointer-events: none;
   z-index: 1;
-  transform: scaleY(-1);
+}
+#navigation .navigation-btn-container.right {
+  justify-content: flex-end;
+  border-right: #b3b6bc solid 0.5vw;
+  border-radius: 0rem 100rem 100rem 0rem;
 }
 #navigation .navigation-btn-container.right::before {
   top: -1vw;
   left: -1vw;
   bottom: 0.5vw;
   right: -1vw;
+  border-right: rgba(241, 241, 241, 0.2941176471) solid 0.5vw;
+  border-radius: 0rem 100rem 100rem 0rem;
   pointer-events: none;
   z-index: 1;
+}
+#navigation .navigation-btn-container::before {
+  content: "";
+  position: absolute;
+  border-top: rgba(241, 241, 241, 0.2941176471) solid 0.5vw;
+  border-bottom: rgba(241, 241, 241, 0.2941176471) solid 0.5vw;
+  border-radius: 100rem;
 }
 #navigation .navigation-btn-container .navigation-small-btn-container {
   display: flex;

@@ -55,10 +55,10 @@
   z-index: 1;
 }
 
-.navigation-btn-container.right .medium {
+.navigation-btn-container.left .medium {
   margin-left: 1%;
 }
-.navigation-btn-container.right .medium img:last-child {
+.navigation-btn-container.left .medium img:last-child {
   aspect-ratio: 96/64;
   width: 50%;
 }
