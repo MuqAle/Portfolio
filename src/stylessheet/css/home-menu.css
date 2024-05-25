@@ -27,10 +27,10 @@
 #navigation {
   position: absolute;
   width: 100vw;
-  height: 30vh;
+  height: 26vh;
   width: 100dvw;
-  height: 30dvh;
   bottom: 0;
+  margin-bottom: 2vh;
   z-index: 1;
 }
 
@@ -40,7 +40,7 @@
   height: 100dvh;
   width: 100dvw;
   display: grid;
-  grid-template-rows: 0.7fr 0.3fr;
+  grid-template-rows: 0.85fr 0.3fr;
 }
 #main-home-container .top-part {
   background-color: #f8f8f8;

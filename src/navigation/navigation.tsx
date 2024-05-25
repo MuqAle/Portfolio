@@ -19,8 +19,8 @@ const Navigation = () => {
     
     return(
         <nav id="navigation">
-            <div className="navigation-big-container">
-                <BtnContainer side={"left"}>
+            <div className="navigation-big-container left-side">
+                <BtnContainer side={"left-side left"}>
                 <div className="navigation-small-btn-container">
                 <HomeBtn type="small">
                         <img src={contact} alt="Page with a pen on top" />
@@ -30,20 +30,20 @@ const Navigation = () => {
                     </HomeBtn>
                 </div>
             </BtnContainer>
-            <BtnContainer side="right">
+            <BtnContainer side="left-side right">
                 <HomeBtn type="medium">
                     <p>Muq</p>
                 </HomeBtn>
             </BtnContainer>
             </div>
             <p id="navigation-date">{date[0]} {date[1]}</p>
-            <div className="navigation-big-container">
-                <BtnContainer side={"left"}>
+            <div className="navigation-big-container right-side">
+                <BtnContainer side={"right-side left"}>
                     <HomeBtn type="medium">
                         <img src={envelope} alt="envelope" />
                     </HomeBtn>
                 </BtnContainer>
-                <BtnContainer side="right">
+                <BtnContainer side="right-side right">
                     <HomeBtn type="large">
                         <img src={home} alt="Box with muq written on it" />
                     </HomeBtn>

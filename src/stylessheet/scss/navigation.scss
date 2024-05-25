@@ -5,101 +5,129 @@
     url('../../fonts/FOTRodinNTLGPro/FOTRodinNTLGProB/RodinNTLGPro-B-AlphaNum.woff2') format('woff2');
 }
 
+
+
 #navigation{
     display: flex;
-    align-items: center;
+    align-items: last baseline;
     justify-content: space-between;
-    z-index: 2;
+    z-index: 0;
 
-    .navigation-big-container{
-        display: flex;
-    }
+ 
 
     #navigation-date{
         font-family: 'FOTRodinNTLGProB', sans-serif;
         font-size: 2.8cqw;
+        width: 100vw;
         text-wrap: nowrap;
-        margin-top: 5%;
+        margin-top: 8vh;
+        margin-top: 8dvh;
         color: #787879;
-    }
-
-    .navigation-btn-container{
-        // width: calc(14.5vw * 2);
-        // width: calc(14.5dvw * 2);
-        height:22vh;
-        height: 22dvh;
-        margin-top: -1cqh;
-        background: linear-gradient(180deg, #ffffff69 25% ,#D2D4DB 100%);
-        position: relative;
+        position: absolute;
         display: flex;
-        align-items: start;
-        border-top:#b3b6bc solid .5vw;
-        border-bottom: #b3b6bc solid .5vw;
-        position: relative;
-        // padding: 0 .5cqw;
-        &.left{
-            // transform: rotate(180deg);
-            // left:-21.5%;
-            // width: calc(21dvw * 2);
-            // padding-right: 1%;
-          
-            border-left: #b3b6bc solid .5vw;
-            border-radius: 100rem 0rem 0rem 100rem;
+        justify-content: center;
 
-            &::before{
-                 border-left: #f1f1f14b solid .5vw;
-            border-radius: 100rem 0rem 0rem 100rem;
-                top: .5vw;
-                left: .25vw;
-                bottom: -1vw;
-                right: .25vw;
-                pointer-events: none;
-                z-index: 1;
-            }
+    }
+
+    .navigation-big-container{
+        display: flex;
+        transform: rotate(180deg);
     
+        position: absolute;
+
+
+        &.left-side{
+            left: -29vw;
+            transform-origin: 58% 50% ;
         }
 
-        &.right{
-            justify-content: flex-end;
-            // transform: rotate(180deg);
-            // right: -15.5%;
-            //    width: calc(15dvw * 2);
+        &.right-side{
+            right: -26vw;
+        }
 
-            border-right: #b3b6bc solid .5vw;
-            border-radius: 0rem 100rem 100rem 0rem;
+        .navigation-btn-container{
 
-            &::before{
-                top: -1vw;
-                left: -1vw;
-                bottom: .5vw;
-                right: -1vw;
-                border-right: #f1f1f14b solid .5vw;
-                border-radius: 0rem 100rem 100rem 0rem;
-                pointer-events: none;
-                z-index: 1;
+                
+        &.left-side.left{
+            padding-left: 2vw;
+            padding-right: 7.5vw;
+        }
+        &.left-side.right{
+            padding-right: 2vw;
+            padding-left: 7.5vw;
+            
+        }
+        &.right-side.right{
+            padding-left: 10vw;
+        }
+        &.right-side.left{
+            padding-right: 10vw;
+
+        }
+
+        &.left-side.left::before{
+            top: .5vw;
+            left: .25vw;
+            bottom: -1vw;
+            right: .25vw;
+        }
+
+        &.left-side.right::before{
+            top: -1vw;
+            left: .25vw;
+            bottom: .5vw;
+            right: .25vw;
+        }
+
+        &.right-side.left::before{
+            top: -1vw;
+            left: -1vw;
+            bottom: .5vw;
+            right: -1vw;
+        }
+
+        &.right-side.right::before{
+            top: .5vw;
+            left: -1vw;
+            bottom: -1vw;
+            right: -1vw;
+        }
+
+
+            .navigation-small-btn-container{
+                display: flex;
+                justify-content: flex-start;
+                align-self: flex-end;
+                gap: 2.5%;
+                margin-bottom: 1%;
             }
-        }
-
-        &::before{
-            content: '';
-            position: absolute;
-            border-top:#f1f1f14b  solid .5vw;
-            border-bottom: #f1f1f14b solid .5vw;
-            border-radius: 100rem;
-        }
-        
-
-        .navigation-small-btn-container{
-            display: flex;
-            justify-content: flex-start;
-            align-items: start;
-            align-self: flex-end;
-            gap: 2.5%;
-            margin-bottom: .4%;
         }
     }
+
 
   
 }
+
+.navigation-btn-container.left-side.right > button{
+    // margin-right: 7%;
+    margin-top: -2.3%;
+}
+
+
+.navigation-btn-container.right-side.left >button{
+
+    margin-left: 1%;
+    margin-top: -.7%;
+
+    img:last-child{
+        aspect-ratio: 96/64 ;
+        width: 50%;
+    }
+  
+}
+
+
+   
+
 
 

@@ -9,17 +9,6 @@
     src: url('../../fonts/WiiSans-Regular-4.otf') format('opentype');
 }
 
-/* Ellipse 5 */
-
-// position: absolute;
-// width: 162px;
-// height: 162px;
-// left: 0px;
-// top: 0px;
-
-// background: #D9D9D9;
-// border: 4px solid #34BEED;
-// box-shadow: 18px 18px 2px -3px #BCBDC3, inset -6px -6px 14px rgba(0, 0, 0, 0.26);
 
 
 
@@ -28,23 +17,19 @@
     border-radius: 50%;
     background-color: #f5f4f4;
     aspect-ratio: 1/1;
-    height: calc(22vh/1.2);
-    // width: 9vw;
+    height: calc(20vh/1.2);
     box-shadow: .7cqw .8cqw .1cqw -.2cqw #00000021, inset 0 0 .6cqw .8cqw rgba(0, 0, 0, 0.054), inset -3cqw -3cqw .5cqw 0cqw rgba(0,0,0,0.05);
     position: relative;
     z-index: 1;
-    margin-top: -.7%;
-    // margin-bottom: 5%;
-    // margin-right: 4%;
     display: flex;
     justify-content: center;
     align-items: center;
 
     &.large{
-        height: calc(22vh/1.1);
+        height: calc(20vh/1.05);
         transform: rotate(180deg);
-        margin-right: -1.3%;
-        margin-top: 2%;
+        margin-right: -8.3%;
+        margin-top: 11%;
 
         & img:last-child{
             width: 60%;
@@ -54,7 +39,8 @@
 
     &.small{
         transform: rotate(180deg);
-        height: calc(22vh/1.4);
+        height: calc(20vh/1.35);
+        margin-top: -30%;
     }
 
     &.small img:last-child{
@@ -83,20 +69,65 @@
     }
 }
 
-.navigation-btn-container.left{
 
-    .medium{
-        margin-left: 1%;
+
+
+.navigation-btn-container{
+    height:21vh;
+    height: 21dvh;
+
+    background: linear-gradient(180deg, #ffffff69 25% ,#D2D4DB 100%);
+    position: relative;
+    display: flex;
+    align-items: start;
+    border-top:#b3b6bc solid .5vw;
+    border-bottom: #b3b6bc solid .5vw;
+    position: relative;
+
+
+    &::before{
+        content: '';
+        position: absolute;
+        border-top:#f1f1f14b  solid .5vw;
+        border-bottom: #f1f1f14b solid .5vw;
+        border-radius: 100rem;
     }
-    .medium img:last-child{
-        aspect-ratio: 96/64 ;
-        width: 50%;
+
+
+    &.left{          
+        border-left: #b3b6bc solid .5vw;
+        border-radius: 100rem 0rem 0rem 100rem;
+
+        &::before{
+             border-left: #f1f1f14b solid .5vw;
+            border-radius: 100rem 0rem 0rem 100rem;
+
+            pointer-events: none;
+            z-index: 1;
+        }
+
     }
+
+    &.right{
+        justify-content: flex-end;
+        border-right: #b3b6bc solid .5vw;
+        border-radius: 0rem 100rem 100rem 0rem;
+        align-items: start;
+        &::before{
+            
+            border-right: #f1f1f14b solid .5vw;
+            border-radius: 0rem 100rem 100rem 0rem;
+            pointer-events: none;
+            z-index: 1;
+        }
+    }
+
+
+    
 }
 
 .menu-btn{
     position: relative;
-    // width:500px;
     width: 546px;
     height: 148px;
     // aspect-ratio: 546/148; 
