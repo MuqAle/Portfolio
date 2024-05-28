@@ -19,9 +19,8 @@
         font-family: 'FOTRodinNTLGProB', sans-serif;
         font-size: 2.8cqw;
         width: 100vw;
+        margin-bottom: .4%;
         text-wrap: nowrap;
-        margin-top: 8vh;
-        margin-top: 8dvh;
         color: #787879;
         position: absolute;
         display: flex;
@@ -31,7 +30,7 @@
 
     .navigation-big-container{
         display: flex;
-        transform: rotate(180deg);
+        // transform: rotate(180deg);
     
         position: absolute;
 

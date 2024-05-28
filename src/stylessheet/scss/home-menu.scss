@@ -38,7 +38,7 @@
     width: 100dvw;
     // height: 20dvh;
     bottom: 0;
-    margin-bottom: 2vh;
+    margin-bottom: 3vh;
     z-index: 1;
 }
 
@@ -50,10 +50,11 @@
     height: 100dvh;
     width: 100dvw;
     display: grid;
-    grid-template-rows: .85fr .3fr;
+    grid-template-rows: .8fr .3fr;
 
     .top-part{
         background-color: #f8f8f8;
+        position: relative;
         z-index: 3;
         background-image: url(../../images/home-menu/background-lines.svg);
         background-position: center center;
@@ -105,8 +106,6 @@
     }
 }
 
-
-
 @supports (width: 1cqw) {
     .time-container {
         gap: 1cqw; 
@@ -120,3 +119,43 @@
         font-size: 2cqw; 
     }
 }
+
+
+// Wii Box
+
+li{
+    list-style: none;
+}
+
+#wii-box-main-container{
+    // width: 100%;
+    height: 100%;
+    // background-color: black;
+    position: relative;
+    display: flex;
+    gap: 1.5vh;
+    bottom: 0;
+    position: absolute;
+    left: 6vw;
+    padding: 5vh 0vw 1vh 0vw;
+    // padding: 5% 6% 1%;
+}
+
+.wii-box-container{
+    display: grid;
+    gap: 1.5vh;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);    
+}
+
+.wii-box{
+    aspect-ratio: 650/356;
+    // background-color: black;
+    background-image: url(../../images/home-menu/wii-box-border.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
