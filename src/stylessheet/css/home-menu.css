@@ -49,6 +49,7 @@
   background-image: url(../../images/home-menu/background-lines.svg);
   background-position: center center;
   background-size: 100% auto;
+  overflow-x: scroll;
 }
 #main-home-container .bottom-part {
   background-image: url(../../images/home-menu/home-page-tab.svg);
@@ -105,13 +106,11 @@ li {
 
 #wii-box-main-container {
   height: 100%;
-  position: relative;
   display: flex;
   gap: 1.5vh;
   bottom: 0;
   position: absolute;
-  left: 6vw;
-  padding: 5vh 0vw 1vh 0vw;
+  padding: 6vh 12% 1vh 12%;
 }
 
 .wii-box-container {
@@ -123,10 +122,44 @@ li {
 
 .wii-box {
   aspect-ratio: 650/356;
-  background-image: url(../../images/home-menu/wii-box-border.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wii-box img {
+  aspect-ratio: 650/356;
+  width: 100%;
+  position: absolute;
+}
+.wii-box .wii-outline {
+  z-index: 2;
+}
+.wii-box .wii-background {
+  z-index: 0;
+}
+.wii-box .wii-tv-animation {
+  aspect-ratio: 650/356;
+  background-size: 100% 100%;
+  border-radius: 12%;
+  width: 98%;
+  position: absolute;
+  z-index: 1;
+  animation-duration: 45s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: tvstatic;
+  animation-timing-function: linear;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.4) 0%, rgba(151, 151, 151, 0.4) 50%, rgba(255, 255, 255, 0.4) 100%);
+}
+
+@keyframes tvstatic {
+  0% {
+    background-position: 0% -30vh;
+  }
+  100% {
+    background-position: 0% 70vh;
+  }
 }
 
 /*# sourceMappingURL=home-menu.css.map */

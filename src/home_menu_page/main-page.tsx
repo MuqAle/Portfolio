@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useImmer } from "use-immer"
-import WiiBox from "./wii-box"
+import EmptyWiiBox from "./empty-wii-box"
 
 
 const MainHomePage = () => {
@@ -26,12 +26,12 @@ const MainHomePage = () => {
                     <div className="wii-box-container">
                         <div></div>
                     {[...Array(11)].map((_box,i) => (
-                        <WiiBox key={i} ></WiiBox>
+                        <EmptyWiiBox key={i}></EmptyWiiBox>
                     ))}
                     </div>
                     <div className="wii-box-container">
                     {[...Array(12)].map((_box,i) => (
-                        <WiiBox key={i} ></WiiBox>
+                        <EmptyWiiBox key={i} ></EmptyWiiBox>
                     ))}
                     </div>
                     
