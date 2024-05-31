@@ -22,12 +22,16 @@ const Navigation = () => {
             <div className="navigation-big-container left-side">
                 <BtnContainer side={"left-side left"}>
                 <div className="navigation-small-btn-container">
-                <HomeBtn type="small">
-                        <img src={contact} alt="Page with a pen on top" />
-                    </HomeBtn>
-                    <HomeBtn type="small">
-                        <img src={calender} alt="Calender" />
-                    </HomeBtn>
+                    <div className="small-upside-down-home-btn-containers">
+                        <HomeBtn type="small">
+                            <img src={contact} alt="Page with a pen on top" />
+                        </HomeBtn>
+                    </div>
+                    <div className="small-upside-down-home-btn-containers">
+                        <HomeBtn type="small">
+                            <img src={calender} alt="Calender" />
+                        </HomeBtn>
+                    </div>
                 </div>
             </BtnContainer>
             <BtnContainer side="left-side right">
@@ -44,9 +48,11 @@ const Navigation = () => {
                     </HomeBtn>
                 </BtnContainer>
                 <BtnContainer side="right-side right">
-                    <HomeBtn type="large">
-                        <img src={home} alt="Box with muq written on it" />
-                    </HomeBtn>
+                    <div className="large-upside-down-home-btn-containers">
+                        <HomeBtn type="large">
+                            <img src={home} alt="Box with muq written on it" />
+                        </HomeBtn>
+                    </div>
                 </BtnContainer>
             </div>
                 

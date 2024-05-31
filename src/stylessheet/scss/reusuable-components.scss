@@ -13,6 +13,8 @@
 
 // Round Buttons
 
+
+
 .home-btn{
     border:#34beed solid .29vw;
     border-radius: 50%;
@@ -25,12 +27,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
     &.large{
         height: calc(20vh/1.05);
-        transform: rotate(180deg);
-        margin-right: -8.3%;
-        margin-top: 11%;
+        // transform: rotate(180deg) ;
+       
 
         & img:last-child{
             width: 60%;
@@ -39,9 +41,9 @@
     }
 
     &.small{
-        transform: rotate(180deg);
+        // transform: rotate(180deg) ;
         height: calc(20vh/1.35);
-        margin-top: -30%;
+    
     }
 
     &.small img:last-child{
@@ -68,6 +70,16 @@
         z-index: 1;
 
     }
+}
+
+.large-upside-down-home-btn-containers{
+    transform: rotate(180deg);
+    margin-right: -8.3%;
+    margin-top: 11%;
+}
+.small-upside-down-home-btn-containers{
+    margin-top: -30%;
+    transform: rotate(180deg);
 }
 
 

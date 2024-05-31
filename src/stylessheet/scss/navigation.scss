@@ -31,9 +31,8 @@
     .navigation-big-container{
         display: flex;
         // transform: rotate(180deg);
-    
+        z-index: 1;
         position: absolute;
-
 
         &.left-side{
             left: -29vw;
@@ -45,7 +44,6 @@
         }
 
         .navigation-btn-container{
-
                 
         &.left-side.left{
             padding-left: 2vw;
@@ -94,10 +92,11 @@
 
 
             .navigation-small-btn-container{
+               
                 display: flex;
                 justify-content: flex-start;
                 align-self: flex-end;
-                gap: 2.5%;
+                gap: 3.5%;
                 margin-bottom: 1%;
             }
         }

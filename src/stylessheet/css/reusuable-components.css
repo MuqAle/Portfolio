@@ -18,21 +18,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .home-btn.large {
   height: 19.0476190476vh;
-  transform: rotate(180deg);
-  margin-right: -8.3%;
-  margin-top: 11%;
 }
 .home-btn.large img:last-child {
   width: 60%;
   aspect-ratio: 53/38;
 }
 .home-btn.small {
-  transform: rotate(180deg);
   height: 14.8148148148vh;
-  margin-top: -30%;
 }
 .home-btn.small img:last-child {
   aspect-ratio: 54/53;
@@ -52,6 +48,17 @@
   right: 29%;
   top: 6.5%;
   z-index: 1;
+}
+
+.large-upside-down-home-btn-containers {
+  transform: rotate(180deg);
+  margin-right: -8.3%;
+  margin-top: 11%;
+}
+
+.small-upside-down-home-btn-containers {
+  margin-top: -30%;
+  transform: rotate(180deg);
 }
 
 .navigation-btn-container {

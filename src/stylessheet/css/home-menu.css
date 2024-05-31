@@ -7,6 +7,10 @@
   src: url(../../fonts/Monice/MoniceDemoBold-GOoEa.ttf) format("truetype"), url(../../fonts/Monice/MoniceDemoBold.woff) format("woff"), url(../../fonts/Monice/MoniceDemoBold.woff2) format("woff2");
   font-weight: bold;
 }
+@font-face {
+  font-famil: "WiiSans";
+  src: url(../../fonts/WiiSans-Regular-4.otf);
+}
 * {
   padding: 0;
   margin: 0;
@@ -50,6 +54,11 @@
   background-position: center center;
   background-size: 100% auto;
   overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+#main-home-container .top-part::-webkit-scrollbar {
+  display: none;
 }
 #main-home-container .bottom-part {
   background-image: url(../../images/home-menu/home-page-tab.svg);
@@ -61,7 +70,6 @@
   width: 100dvw;
   display: flex;
   justify-content: center;
-  z-index: 2;
 }
 
 .time-container {
@@ -110,36 +118,52 @@ li {
   gap: 1.5vh;
   bottom: 0;
   position: absolute;
-  padding: 6vh 12% 1vh 12%;
+  padding: 6vh 12vw 1vh 12vw;
 }
 
 .wii-box-container {
   display: grid;
-  gap: 1.5vh;
+  gap: 2vh;
+  width: 83vw;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
 }
 
 .wii-box {
-  aspect-ratio: 650/356;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.wii-box img {
-  aspect-ratio: 650/356;
+.wii-box .wii-outline, .wii-box .wii-background {
+  height: 100%;
   width: 100%;
   position: absolute;
+  object-fit: fill;
 }
-.wii-box .wii-outline {
+.wii-box .empty {
   z-index: 2;
 }
 .wii-box .wii-background {
   z-index: 0;
 }
+.wii-box .wii-box-text {
+  /* Muq */
+  position: absolute;
+  z-index: 0;
+  font-family: "Wii Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.5vw;
+  line-height: 47%;
+  /* or 108px */
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.05);
+}
 .wii-box .wii-tv-animation {
-  aspect-ratio: 650/356;
+  width: 100%;
+  height: 100%;
   background-size: 100% 100%;
   border-radius: 12%;
   width: 98%;
@@ -160,6 +184,10 @@ li {
   100% {
     background-position: 0% 70vh;
   }
+}
+.project-logo {
+  width: 60%;
+  aspect-ratio: 325/178;
 }
 
 /*# sourceMappingURL=home-menu.css.map */
