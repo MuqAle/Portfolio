@@ -1,9 +1,12 @@
 import btnHighlight from '../images/buttons/menu_btn_highlight.svg'
 
-const MenuBtn = ({btnName}:{btnName:string}) => (
-     <button className="menu-btn">
+const MenuBtn = ({btnName,type}:{btnName:string,type:string}) => (
+     <button className={"menu-btn " + type}>
         <img src={btnHighlight} alt="" />
-        {btnName}
+        <p>
+         {btnName}
+        </p>
+        
      </button>
 )
 

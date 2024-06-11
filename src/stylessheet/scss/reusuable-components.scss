@@ -1,6 +1,6 @@
 @font-face {
     font-family: "FOTRodinNTLG DB";
-    src: url('../../fonts/FOTRodinNTLGProDB.otf') format('opentype'),
+    src:
     url('../../fonts/FOTRodinNTLGPro/FOTRodinNTLGProDB/RodinNTLGPro-DB-AlphaNum.woff') format('woff'),
     url('../../fonts/FOTRodinNTLGPro/FOTRodinNTLGProDB/RodinNTLGPro-DB-AlphaNum.woff2') format('woff2');
 }
@@ -16,12 +16,11 @@
 
 
 .home-btn{
-    border:#34beed solid .29vw;
+    border:#34beed solid .16vw;
     border-radius: 50%;
     background-color: #f5f4f4;
     aspect-ratio: 1/1;
-    height: calc(20vh/1.2);
-    box-shadow: .7cqw .8cqw .1cqw -.2cqw #00000021, inset 0 0 .6cqw .8cqw rgba(0, 0, 0, 0.054), inset -3cqw -3cqw .5cqw 0cqw rgba(0,0,0,0.05);
+    box-shadow: inset 0 0 .6cqw .8cqw rgba(0, 0, 0, 0.054), inset -3cqw -3cqw .5cqw 0cqw rgba(0,0,0,0.05);
     position: relative;
     z-index: 1;
     display: flex;
@@ -29,38 +28,7 @@
     align-items: center;
     cursor: pointer;
 
-    &.large{
-        height: calc(20vh/1.05);
-        // transform: rotate(180deg) ;
-       
 
-        & img:last-child{
-            width: 60%;
-            aspect-ratio: 53/38;
-        }
-    }
-
-    &.small{
-        // transform: rotate(180deg) ;
-        height: calc(20vh/1.35);
-    
-    }
-
-    &.small img:last-child{
-        aspect-ratio: 54/53;
-        width: 45%;
-        
-
-    }
-
-
-    p{
-        z-index: 0;
-        text-align: center;
-        font-family: "WiiSans-Regular", sans-serif;
-        font-size: calc(6.5vh/1.2);
-        color: #999999;
-    }
     .btn-highlight{
         aspect-ratio: 54/52;
         width: 66%;
@@ -143,24 +111,26 @@
 
 .menu-btn{
     position: relative;
-    width: 546px;
-    height: 148px;
-    // aspect-ratio: 546/148; 
-    background: #E3E8EF;
-    opacity: 0.9;
-    border: 4px solid #34BEED;
-    box-shadow: 0px 0px 5px #34BEED, inset 10px 9px 60px #FFFFFF, inset 0px -10px 19px 16px #B1BCCA;
-    border-radius: 100px;
+    aspect-ratio: 546/148; 
+   
+    background: #e3e8ef;
+    border: .2vw solid #34BEED;
+    box-shadow: inset .5vw .45vw 3vw #FFFFFF, inset 0 -.5vw .8vw .6vw #b1bccacc;
+    border-radius: 100rem;
     font-family: "FOTRodinNTLG DB", sans-serif;
-    font-size: 59px;
     color: #353a3b;
     
+    p{
+        position: relative;
+        z-index: 2;
+    }
     img{
         aspect-ratio:493/93;
-        width: 447px;
         position: absolute;
-        z-index: -1;
-        right: 8%;
+        width: 90%;
+        z-index: 1;
+        opacity: 0.9;
+        right: 9%;
         top: 4%;
     }
 }

@@ -1,0 +1,46 @@
+
+.channel-parent-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background-color: black;
+
+    .menu-btn{
+        font-size: 2.7cqw;
+        height: 60%;
+        margin-top: -1.9%;
+    }
+}
+.shape-container {
+    width: 98vw; /* Example: 50% of the viewport width */
+    height: 98vh; /* Example: 50% of the viewport height */
+    position: relative;
+    // background-color: black;
+    overflow: hidden; /* Ensure no content overflows the shape */
+    display: grid;
+    grid-template-rows: .75fr .25fr;
+    background-color: white;
+}
+svg {
+    position: absolute;
+    width: 0; /* Hide the SVG visually */
+    height: 0;
+}
+
+.clip-path {
+    clip-path: url(#custom-shape);
+}
+
+.channel-footer{
+    background-image: linear-gradient(to bottom, transparent 75%, white 25%),
+    radial-gradient(circle, rgb(255, 255, 255) 0%, #c9c9c1 100%);
+    background-size: 100% 3.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6%;
+    border-top: .11vw solid black;
+}
