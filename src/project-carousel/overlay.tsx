@@ -1,8 +1,50 @@
+import { animate, delay, motion } from "framer-motion"
 import MenuBtn from "../reusable_components/menu_btns"
 
-const ChannelOverlay = () => {
+const ChannelOverlay = ({onClick,zoom}:{
+    onClick:() => void,
+    zoom:boolean}) => {
+
+    const parentVariants = {
+        initial:{
+            opacity:0
+        },
+        animate:{
+            opacity:1,
+            scale:1.57,
+   
+            transition:{
+                duration:.5
+            },
+
+        },
+        exit:{
+            opacity:0,
+            transition:{
+                duration:.5
+            },
+
+        }
+    }
+
+    const childVariants = {
+        animate:{
+            
+            transform: 'translate(0, .1%)',
+            transition:{
+                duration:.5
+            },
+
+        },
+    }
+    
     return(
-    <div className="channel-parent-div">
+    <motion.div  className="channel-parent-div"
+    initial='initial'
+    exit='exit'
+    variants={parentVariants}
+    animate='animate'>
+        <motion.div className="black-overlay"></motion.div>
         <svg>
             <defs>
                 <clipPath id="custom-shape" clipPathUnits="objectBoundingBox">
@@ -10,17 +52,20 @@ const ChannelOverlay = () => {
                 </clipPath>
             </defs>
         </svg>
-        <div  className="shape-container clip-path">
+        <motion.div className="shape-container clip-path"
+            variants={childVariants}
+            animate='animate'
+            >
             <div>
 
             </div>
             <div className="channel-footer">
-                <MenuBtn btnName={"Muq Menu"} type={"channel"}></MenuBtn>
-                <MenuBtn btnName={"Start"} type={"channel"}></MenuBtn>
+                <div className="top-border"></div>
+                <MenuBtn btnName={"Muq Menu"} type={"channel"} onClick={onClick}></MenuBtn>
+                <MenuBtn btnName={"Start"} type={"channel"} ></MenuBtn>
             </div>
-        </div>
-
-    </div>
+        </motion.div>
+    </motion.div>
     )
 
 }

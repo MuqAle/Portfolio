@@ -112,17 +112,21 @@
 .menu-btn{
     position: relative;
     aspect-ratio: 546/148; 
-   
     background: #e3e8ef;
     border: .2vw solid #34BEED;
     box-shadow: inset .5vw .45vw 3vw #FFFFFF, inset 0 -.5vw .8vw .6vw #b1bccacc;
     border-radius: 100rem;
     font-family: "FOTRodinNTLG DB", sans-serif;
     color: #353a3b;
-    
+    cursor: pointer;
     p{
         position: relative;
         z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
     }
     img{
         aspect-ratio:493/93;
@@ -131,7 +135,7 @@
         z-index: 1;
         opacity: 0.9;
         right: 9%;
-        top: 4%;
+        top: 5%;
     }
 }
 

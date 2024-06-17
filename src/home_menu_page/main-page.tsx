@@ -1,10 +1,10 @@
 import { LegacyRef,useEffect,useRef } from "react"
-import { useImmer } from "use-immer"
+import { Updater, useImmer } from "use-immer"
 import EmptyWiiBox from "./empty-wii-box"
 import EcommerceProjectWiiBox from "./ecommerce-project-wii-box"
 import minus from '../images/buttons/minus-sign.svg'
 import leftScrollBtn from '../images/buttons/left-scroll-btn.svg'
-import ArrowButton from "../reusable_components/arrow-btn"
+import ArrowButton from "../reusable_components/home-arrow-btn"
 import rightScrollBtn from '../images/buttons/right-scroll-btn.svg'
 import plus from '../images/buttons/plus-sign.svg'
 
@@ -13,14 +13,18 @@ import plus from '../images/buttons/plus-sign.svg'
 
 
 
-const MainHomePage = () => {
+const MainHomePage = ({setTransformOrigin,setZoom,zoom,transformOrigin}:
+    {setTransformOrigin: Updater<{ x: number; y: number; }>,
+    transformOrigin:{x:number,y:number},
+    setZoom:Updater<boolean>,
+    zoom:boolean}) => {
 
     const [time, setTime] = useImmer(new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' }))
     const [showRightBtn, setShowRightBtn] = useImmer(true)
     const [rightParentVisible,setRightParentVisible] = useImmer(true)
     const [hoverBtnTiming, setHoverBtnTiming] = useImmer(true)
     const wiiContainerRef:LegacyRef<HTMLDivElement>  = useRef(null)
- 
+
     useEffect(() => {
         const interval = setInterval(() => {
             setTime(new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' }))
@@ -36,6 +40,23 @@ const MainHomePage = () => {
             wiiContainerRef.current?.removeEventListener('scroll',scrollToEnd)
         }
     },[])
+
+
+    const handleZoomIn = (event: React.FocusEvent<HTMLDivElement>) => {
+        if(!zoom){
+            setZoom(true)
+            const { left, top, width, height } = event.currentTarget.getBoundingClientRect()
+            const xZoom = left + width / 2
+            const yZoom = top + height / 2
+            const x = xZoom * 3
+            const y = yZoom * 3
+            setTransformOrigin({ x, y })
+        
+            console.log(top)
+            console.log(height)
+        }
+    
+    }
 
     const scrollToEnd = () => {
         setRightParentVisible(!rightParentVisible)
@@ -74,11 +95,35 @@ const MainHomePage = () => {
     
     return(
         <div id="main-home-container">
-            <section className="top-part" ref={wiiContainerRef}>
+            <section className={"top-part" + (zoom ? ' no-scroll':'')} ref={wiiContainerRef}>
                 <div id="wii-box-main-container">
                     <div className="wii-box-container">
-                    <EcommerceProjectWiiBox></EcommerceProjectWiiBox>
-                    {[...Array(11)].map((_box,i) => (
+                    <EcommerceProjectWiiBox
+                    zoom={zoom}
+                    onClick={(event) => {
+                        event.stopPropagation()
+                        handleZoomIn(event)
+                      }}></EcommerceProjectWiiBox>
+                      <EcommerceProjectWiiBox
+                    zoom={zoom}
+                    onClick={(event) => {
+                        event.stopPropagation()
+                        handleZoomIn(event)
+                      }}></EcommerceProjectWiiBox>
+                      <EcommerceProjectWiiBox
+                    zoom={zoom}
+                    onClick={(event) => {
+                        event.stopPropagation()
+                        handleZoomIn(event)
+                      }}></EcommerceProjectWiiBox>
+                      <EcommerceProjectWiiBox
+                    zoom={zoom}
+                    onClick={(event) => {
+                        event.stopPropagation()
+                        handleZoomIn(event)
+                      }}></EcommerceProjectWiiBox>
+                      
+                    {[...Array(8)].map((_box,i) => (
                         <EmptyWiiBox key={i}></EmptyWiiBox>
                     ))}
                     </div>

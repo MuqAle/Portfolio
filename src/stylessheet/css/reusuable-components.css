@@ -1,45 +1,23 @@
 @font-face {
   font-family: "FOTRodinNTLG DB";
-  src: url("../../fonts/FOTRodinNTLGProDB.otf") format("opentype"), url("../../fonts/FOTRodinNTLGPro/FOTRodinNTLGProDB/RodinNTLGPro-DB-AlphaNum.woff") format("woff"), url("../../fonts/FOTRodinNTLGPro/FOTRodinNTLGProDB/RodinNTLGPro-DB-AlphaNum.woff2") format("woff2");
+  src: url("../../fonts/FOTRodinNTLGPro/FOTRodinNTLGProDB/RodinNTLGPro-DB-AlphaNum.woff") format("woff"), url("../../fonts/FOTRodinNTLGPro/FOTRodinNTLGProDB/RodinNTLGPro-DB-AlphaNum.woff2") format("woff2");
 }
 @font-face {
   font-family: "WiiSans-Regular";
   src: url("../../fonts/WiiSans-Regular-4.otf") format("opentype");
 }
 .home-btn {
-  border: #34beed solid 0.29vw;
+  border: #34beed solid 0.16vw;
   border-radius: 50%;
   background-color: #f5f4f4;
   aspect-ratio: 1/1;
-  height: 16.6666666667vh;
-  box-shadow: 0.7cqw 0.8cqw 0.1cqw -0.2cqw rgba(0, 0, 0, 0.1294117647), inset 0 0 0.6cqw 0.8cqw rgba(0, 0, 0, 0.054), inset -3cqw -3cqw 0.5cqw 0cqw rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 0.6cqw 0.8cqw rgba(0, 0, 0, 0.054), inset -3cqw -3cqw 0.5cqw 0cqw rgba(0, 0, 0, 0.05);
   position: relative;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
-.home-btn.large {
-  height: 19.0476190476vh;
-}
-.home-btn.large img:last-child {
-  width: 60%;
-  aspect-ratio: 53/38;
-}
-.home-btn.small {
-  height: 14.8148148148vh;
-}
-.home-btn.small img:last-child {
-  aspect-ratio: 54/53;
-  width: 45%;
-}
-.home-btn p {
-  z-index: 0;
-  text-align: center;
-  font-family: "WiiSans-Regular", sans-serif;
-  font-size: 5.4166666667vh;
-  color: #999999;
 }
 .home-btn .btn-highlight {
   aspect-ratio: 54/52;
@@ -104,24 +82,31 @@
 
 .menu-btn {
   position: relative;
-  width: 546px;
-  height: 148px;
-  background: #E3E8EF;
-  opacity: 0.9;
-  border: 4px solid #34BEED;
-  box-shadow: 0px 0px 5px #34BEED, inset 10px 9px 60px #FFFFFF, inset 0px -10px 19px 16px #B1BCCA;
-  border-radius: 100px;
+  aspect-ratio: 546/148;
+  background: #e3e8ef;
+  border: 0.2vw solid #34BEED;
+  box-shadow: inset 0.45vw 3vw #FFFFFF, inset 0 -0.5vw 0.8vw 0.6vw rgba(177, 188, 202, 0.8);
+  border-radius: 100rem;
   font-family: "FOTRodinNTLG DB", sans-serif;
-  font-size: 59px;
   color: #353a3b;
+  cursor: pointer;
+}
+.menu-btn p {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 .menu-btn img {
   aspect-ratio: 493/93;
-  width: 447px;
   position: absolute;
-  z-index: -1;
-  right: 8%;
-  top: 4%;
+  width: 90%;
+  z-index: 1;
+  opacity: 0.9;
+  right: 9%;
+  top: 5%;
 }
 
 /*# sourceMappingURL=reusuable-components.css.map */

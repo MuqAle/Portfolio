@@ -8,7 +8,7 @@
   font-weight: bold;
 }
 @font-face {
-  font-famil: "WiiSans";
+  font-family: "WiiSans";
   src: url(../../fonts/WiiSans-Regular-4.otf);
 }
 * {
@@ -17,10 +17,21 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
 .main-container {
   background-color: #CECFD7;
-  height: 100dvh;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -56,6 +67,9 @@
   overflow-x: scroll;
   scroll-behavior: smooth;
   scrollbar-width: none;
+}
+#main-home-container .top-part.no-scroll {
+  overflow: hidden;
 }
 #main-home-container .top-part::-webkit-scrollbar {
   display: none;
@@ -118,12 +132,12 @@ li {
   gap: 1.5vh;
   bottom: 0;
   position: absolute;
-  padding: 6vh 12vw 1vh 12vw;
+  padding: 7vh 8.5vw 1.5vh 8.5vw;
 }
 
 .wii-box-container {
   display: grid;
-  gap: 2vh;
+  gap: 1.5vh;
   width: 83vw;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -134,6 +148,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 .wii-box .wii-outline, .wii-box .wii-background {
   height: 100%;
@@ -146,9 +161,9 @@ li {
 }
 .wii-box .wii-background {
   z-index: 0;
+  width: 98%;
 }
 .wii-box .wii-box-text {
-  /* Muq */
   position: absolute;
   z-index: 0;
   font-family: "Wii Sans";
@@ -162,14 +177,13 @@ li {
   color: rgba(0, 0, 0, 0.05);
 }
 .wii-box .wii-tv-animation {
-  width: 100%;
   height: 100%;
   background-size: 100% 100%;
-  border-radius: 12%;
+  clip-path: url(#custom-shape);
   width: 98%;
   position: absolute;
   z-index: 1;
-  animation-duration: 45s;
+  animation-duration: 40s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-name: tvstatic;
@@ -177,17 +191,84 @@ li {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.4) 0%, rgba(151, 151, 151, 0.4) 50%, rgba(255, 255, 255, 0.4) 100%);
 }
 
-@keyframes tvstatic {
-  0% {
-    background-position: 0% -30vh;
-  }
-  100% {
-    background-position: 0% 70vh;
-  }
-}
 .project-logo {
   width: 60%;
   aspect-ratio: 325/178;
+}
+
+@keyframes tvstatic {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100vh;
+  }
+}
+.scroll-main-btn-container {
+  height: 66vh;
+  width: 7.8vw;
+  position: fixed;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scroll-main-btn-container .image-container {
+  width: 67%;
+}
+.scroll-main-btn-container.right-scroll {
+  right: 0;
+}
+.scroll-main-btn-container.right-scroll .scroll-btn-container {
+  margin-right: 95%;
+  justify-content: end;
+}
+.scroll-main-btn-container.right-scroll .scroll-btn-container .home-btn {
+  position: absolute;
+  right: 2vw;
+}
+.scroll-main-btn-container.left-scroll {
+  left: 0;
+}
+.scroll-main-btn-container.left-scroll .scroll-btn-container {
+  margin-left: 95%;
+}
+.scroll-main-btn-container.left-scroll .scroll-btn-container .home-btn {
+  left: 2vw;
+  position: absolute;
+}
+.scroll-main-btn-container .scroll-btn-container {
+  width: 100%;
+  height: 20%;
+  margin-bottom: 24%;
+  display: flex;
+  position: absolute;
+  align-items: center;
+}
+.scroll-main-btn-container .scroll-btn {
+  height: 80%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.scroll-main-btn-container .scroll-btn img {
+  height: 100%;
+  aspect-ratio: 61/103;
+}
+.scroll-main-btn-container .scroll-hover-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+.scroll-main-btn-container .home-btn {
+  border: #34beed solid 0.29vw;
+}
+.scroll-main-btn-container .home-btn.scroll {
+  height: 115%;
+}
+.scroll-main-btn-container .home-btn.scroll img:last-child {
+  width: 100%;
 }
 
 /*# sourceMappingURL=home-menu.css.map */

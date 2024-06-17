@@ -102,6 +102,50 @@
         }
     }
 
+    .home-btn{
+
+        &.medium,&.large,&.small{
+            box-shadow: .7cqw .8cqw .1cqw -.2cqw #00000021, inset 0 0 .6cqw .8cqw rgba(0, 0, 0, 0.054), inset -3cqw -3cqw .5cqw 0cqw rgba(0,0,0,0.05);
+        }
+    
+        &.medium{
+            height: calc(20vh/1.2);
+        }
+    
+        &.large{
+            height: calc(20vh/1.05);
+            // transform: rotate(180deg) ;
+           
+    
+            & img:last-child{
+                width: 60%;
+                aspect-ratio: 53/38;
+            }
+        }
+    
+        &.small{
+            // transform: rotate(180deg) ;
+            height: calc(20vh/1.35);
+        
+        }
+    
+        &.small img:last-child{
+            aspect-ratio: 54/53;
+            width: 45%;
+            
+    
+        }
+    
+    
+        p{
+            z-index: 0;
+            text-align: center;
+            font-family: "WiiSans-Regular", sans-serif;
+            font-size: calc(6.5vh/1.2);
+            color: #999999;
+        }
+    }
+
 
   
 }

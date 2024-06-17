@@ -76,6 +76,33 @@
   gap: 3.5%;
   margin-bottom: 1%;
 }
+#navigation .home-btn.medium, #navigation .home-btn.large, #navigation .home-btn.small {
+  box-shadow: 0.7cqw 0.8cqw 0.1cqw -0.2cqw rgba(0, 0, 0, 0.1294117647), inset 0 0 0.6cqw 0.8cqw rgba(0, 0, 0, 0.054), inset -3cqw -3cqw 0.5cqw 0cqw rgba(0, 0, 0, 0.05);
+}
+#navigation .home-btn.medium {
+  height: 16.6666666667vh;
+}
+#navigation .home-btn.large {
+  height: 19.0476190476vh;
+}
+#navigation .home-btn.large img:last-child {
+  width: 60%;
+  aspect-ratio: 53/38;
+}
+#navigation .home-btn.small {
+  height: 14.8148148148vh;
+}
+#navigation .home-btn.small img:last-child {
+  aspect-ratio: 54/53;
+  width: 45%;
+}
+#navigation .home-btn p {
+  z-index: 0;
+  text-align: center;
+  font-family: "WiiSans-Regular", sans-serif;
+  font-size: 5.4166666667vh;
+  color: #999999;
+}
 
 .navigation-btn-container.left-side.right > button {
   margin-top: -2.3%;
