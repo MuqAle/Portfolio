@@ -1,5 +1,4 @@
-import { animate, delay, motion, transform } from "framer-motion"
-import MenuBtn from "../reusable_components/menu_btns"
+import { motion} from "framer-motion"
 import menuBtn from '../images/channel-overlay/button-wii-menu.svg'
 import { Updater } from "use-immer"
 
@@ -11,34 +10,33 @@ const ChannelOverlay = ({onClick,setZoom}:{
         initial:{
             opacity:0
         },
-        firstAnimation:{
+        animate:{
             opacity:1,
+            transition:{
+                duration:.2
+            }
+        },
+        exit:{
+            opacity:0,
+            transition:{
+                duration:.5,
+            },
+        }
+    }
+
+    const childAniamtion = {
+        animate:{
             scale:1.57,
             transition:{
                 duration:.2
             }
         },
-        secondAnimation:{
-            scale:1.57,
-            transition:{
-                duration:.2
-      
-            },
-        },
-        firstExit:{
+        exit:{
             scale:1,
-
-   
             transition:{
                 duration:.2,
             }, 
 
-        },
-        secondExit:{
-            opacity:0,
-            transition:{
-                duration:.5,
-            },
         }
     }
 
@@ -47,9 +45,9 @@ const ChannelOverlay = ({onClick,setZoom}:{
     return(
     <motion.div  className="channel-parent-div"
     initial='initial'
-    exit={['firstExit','secondExit']}
+    exit='exit'
     variants={parentVariants}
-    animate={'firstAnimation'}
+    animate={'animate'}
     >
         <motion.div className="black-overlay"></motion.div>
         <svg>
@@ -60,6 +58,9 @@ const ChannelOverlay = ({onClick,setZoom}:{
             </defs>
         </svg>
         <motion.div className="shape-container clip-path"
+        variants={childAniamtion}
+        exit='exit'
+        animate={'animate'}
             >
             <div>
 

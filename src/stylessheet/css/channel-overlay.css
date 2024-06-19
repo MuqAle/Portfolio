@@ -127,8 +127,8 @@
 .channel-parent-div .black-overlay {
   position: fixed;
   background-color: black;
-  width: 100vw;
-  height: 100vh;
+  width: 300vw;
+  height: 300vh;
 }
 
 .shape-container {
