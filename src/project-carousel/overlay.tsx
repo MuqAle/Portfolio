@@ -13,6 +13,7 @@ const ChannelOverlay = ({onClick,setZoom}:{
         },
         firstAnimation:{
             opacity:1,
+            scale:1.57,
             transition:{
                 duration:.2
             }
@@ -48,7 +49,8 @@ const ChannelOverlay = ({onClick,setZoom}:{
     initial='initial'
     exit={['firstExit','secondExit']}
     variants={parentVariants}
-    animate={['firstAnimation','secondAnimation']}>
+    animate={'firstAnimation'}
+    >
         <motion.div className="black-overlay"></motion.div>
         <svg>
             <defs>
@@ -64,9 +66,6 @@ const ChannelOverlay = ({onClick,setZoom}:{
             </div>
             <div className="divider"></div>
             <div className="channel-footer">
-                
-                {/* <MenuBtn btnName={"Muq Menu"} type={"channel"} onClick={onClick}></MenuBtn>
-                <MenuBtn btnName={"Start"} type={"channel"} ></MenuBtn> */}
                 <motion.button className="overlay-menu-btn" 
                 whileHover={{scale:1.1}}
                 onClick={

@@ -1,16 +1,20 @@
 import { useImmer } from "use-immer"
 import outline from '../images/home-menu/wii-box-border.svg'
-import discReflection from '../images/home-menu/disc-reflection.svg'
+import discReflection from '../images/home-menu/wii-box-disc-reflection.svg'
+import discInBox from '../images/home-menu/wii-box-disc.svg'
 import disc from '../images/home-menu/disc.svg'
-import { motion } from "framer-motion"
+import { animate, motion } from "framer-motion"
 import { useEffect, useRef } from "react"
+import ZoomContext from "../zoom-context"
+import { useContext } from "react"
 
-const PortfolioWiiBox = ({zoom}:{zoom:boolean}) => {
+const PortfolioWiiBox = () => {
       const [active, setActive] = useImmer(false)
       const [discIn, setdiscIn] = useImmer(false)
       const [top,setTop] = useImmer(0)
       const ref:React.LegacyRef<HTMLDivElement> = useRef(null) 
       const imageRef:React.LegacyRef<HTMLImageElement> = useRef(null) 
+      const zoom = useContext(ZoomContext)
 
       const updatePosition = () =>{
         if(ref.current && imageRef.current){
@@ -36,6 +40,19 @@ const PortfolioWiiBox = ({zoom}:{zoom:boolean}) => {
           
       },[ref, imageRef])
 
+      const discVariant = {
+        animate:{
+          rotateY:'180deg',
+          transition:{
+            delay:5,
+            duration:3,
+            repeat:Infinity,
+            repeatDelay:5,
+            ease: "linear",
+          }
+        }
+      }
+
 
 
 
@@ -44,23 +61,14 @@ const PortfolioWiiBox = ({zoom}:{zoom:boolean}) => {
             <img ref={imageRef} className='disc' src={disc} alt='grey disc'  style={{position:'absolute', top:`${top}px`}}/>
               <div ref={ref} className="wii-box" >
               <img className='wii-outline empty' src={outline} alt="grey outline" />
-              <div className="grey-disc">
-                <motion.img 
-                animate={{
-                    rotateY:'180deg',
-                    
-                }}
-                transition={zoom ? {}:{
-                    delay:5,
-                    duration:3,
-                    repeat:Infinity,
-                    repeatDelay:5,
-                    ease: "linear",
-                    
-                }}
-                src={discReflection}  alt="grey disc with reflection" />
-              </div>
-              
+              <motion.img className="grey-disc"
+              variants={discVariant}
+              animate='animate'
+              src={discInBox}  alt="grey disc" />
+              <motion.img
+              src={discReflection} className="disc-reflection"
+              variants={discVariant}
+              animate='animate'/>
               <div className="wii-tv-overlay"></div>
               <div className="background"> </div>
           </div>

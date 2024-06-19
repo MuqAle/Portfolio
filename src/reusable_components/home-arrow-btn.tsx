@@ -21,14 +21,14 @@ const ArrowButton = ({
     hoverLeaveStartX,
     exitInitialX,
     arrowDirection,
-    originX,zoom} : ScrollButton) => {
+    originX} : ScrollButton) => {
 
     const [isHovered, setIsHovered] = useImmer(false)
     const controls = useAnimation();
     const parentScrollDivRef:React.LegacyRef<HTMLDivElement> = useRef(null)
 
     const bounceAnimation:AnimationProps["variants"] = {
-        animate : zoom ?  {} : {
+        animate :{
             // x:['0%','-5%','0%','5%'],
             x:bounceAnimationX,
             transition:{

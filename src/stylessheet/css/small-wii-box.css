@@ -76,15 +76,15 @@
   overflow: hidden;
 }
 .portfolio .grey-disc {
-  width: 100%;
-  bottom: 0;
-  position: absolute;
+  width: 36%;
   z-index: 1;
-  justify-content: center;
-  display: flex;
+  margin-bottom: 5%;
 }
-.portfolio .grey-disc img {
-  width: 37%;
+.portfolio .disc-reflection {
+  width: 36%;
+  z-index: 1;
+  position: absolute;
+  bottom: 2%;
 }
 .portfolio .wii-tv-overlay {
   height: 100%;
