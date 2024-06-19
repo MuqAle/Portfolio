@@ -1,14 +1,36 @@
 import { Updater, useImmer } from 'use-immer'
 import outline from '../images/home-menu/ecommerce-project-bg.svg'
 import logo from '../images/home-menu/ecommerce-project-logo.svg'
-import {AnimatePresence, motion} from "framer-motion"
+import {AnimatePresence, motion, useAnimation} from "framer-motion"
 import ChannelOverlay from '../project-carousel/overlay'
+import { useContext, useEffect } from 'react'
+import ZoomContext from '../zoom-context'
 
-const EcommerceProjectWiiBox = ({onClick,zoom,setZoom}: {
+const EcommerceProjectWiiBox = ({onClick,setZoom}: {
   onClick:(event: any) => void,
-  setZoom:Updater<boolean>,
-  zoom:boolean}) => {
+  setZoom:Updater<boolean>,}) => {
     const [active, setActive] = useImmer(false)
+    const controls = useAnimation()
+    const zoom = useContext(ZoomContext)
+
+    useEffect(() => {
+      if(!zoom){
+        controls.start({
+          y: ['0%','-15%','0%,15%'],
+          transition: {
+            duration: 2,
+            repeat: Infinity,
+            repeatType: 'loop',
+            ease: 'easeInOut',
+          },
+        });
+      }else{
+        controls.stop()
+      }
+    },[zoom,controls])
+
+
+
     return(
         <li className='wii-box-list'>
           <AnimatePresence>
@@ -26,17 +48,7 @@ const EcommerceProjectWiiBox = ({onClick,zoom,setZoom}: {
          
             <img className='wii-outline' src={outline} alt="grey outline" />
             <motion.img className="project-logo" src={logo} alt="gem heart with muqqy qritten underneath" 
-            animate={{
-                y:zoom ? '0':['0%','-15%','0%,15%'] 
-            }}
-            transition={
-              zoom ? {}:{
-                duration: 2,
-                repeat: Infinity, 
-                repeatType: 'loop', 
-                ease: 'easeInOut', 
-              }}
-            />
+            animate = {controls}/>
         </div>
         </li>
       

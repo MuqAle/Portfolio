@@ -7,10 +7,14 @@ import "./stylessheet/css/channel-overlay.css"
 import "./stylessheet/css/small-wii-box.css"
 import { useImmer } from "use-immer"
 import { animate, delay, motion } from "framer-motion"
+import ZoomContext from "./zoom-context"
+
+
 
 
 
 function App() {
+ 
   const [zoom, setZoom] = useImmer(false)
   const [transformOrigin, setTransformOrigin] = useImmer({ x: 0, y: 0 })
   // const [selectedId, setSelectedId] = useImmer<number | null>(null);
@@ -27,14 +31,17 @@ function App() {
   }
 
   return(
+    <ZoomContext.Provider value = {zoom}>
     <motion.main
     className="main-container"
     animate='animate'
     variants={variants}
 >
-      <MainHomePage transformOrigin={transformOrigin} setTransformOrigin={setTransformOrigin} setZoom={setZoom} zoom={zoom}></MainHomePage>
+      <MainHomePage transformOrigin={transformOrigin} setTransformOrigin={setTransformOrigin} setZoom={setZoom}></MainHomePage>
       <Navigation></Navigation>
     </motion.main>
+    </ZoomContext.Provider>
+
   )
 }
 

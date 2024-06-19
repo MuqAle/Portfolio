@@ -1,4 +1,4 @@
-import { LegacyRef,useEffect,useRef } from "react"
+import { LegacyRef,useContext,useEffect,useRef } from "react"
 import { Updater, useImmer } from "use-immer"
 import EmptyWiiBox from "./empty-wii-box"
 import EcommerceProjectWiiBox from "./ecommerce-project-wii-box"
@@ -8,18 +8,18 @@ import ArrowButton from "../reusable_components/home-arrow-btn"
 import rightScrollBtn from '../images/buttons/right-scroll-btn.svg'
 import plus from '../images/buttons/plus-sign.svg'
 import PortfolioWiiBox from "./portfolio-wii-box"
+import ZoomContext from "../zoom-context"
 
 
 
 
 
-
-const MainHomePage = ({setTransformOrigin,setZoom,zoom,transformOrigin}:
+const MainHomePage = ({setTransformOrigin,setZoom}:
     {setTransformOrigin: Updater<{ x: number; y: number; }>,
     transformOrigin:{x:number,y:number},
-    setZoom:Updater<boolean>,
-    zoom:boolean}) => {
-
+    setZoom:Updater<boolean>,}) => {
+        
+    const zoom = useContext(ZoomContext)
     const [time, setTime] = useImmer(new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' }))
     const [showRightBtn, setShowRightBtn] = useImmer(true)
     const [rightParentVisible,setRightParentVisible] = useImmer(true)
@@ -96,10 +96,9 @@ const MainHomePage = ({setTransformOrigin,setZoom,zoom,transformOrigin}:
             <section className={"top-part" + (zoom ? ' no-scroll':'')} ref={wiiContainerRef}>
                 <div id="wii-box-main-container">
                     <div className="wii-box-container">
-                    <PortfolioWiiBox zoom={zoom}></PortfolioWiiBox>
+                    <PortfolioWiiBox></PortfolioWiiBox>
                     <EcommerceProjectWiiBox
                     setZoom={setZoom}
-                    zoom={zoom}
                     onClick={(event) => {
                         event.stopPropagation()
                         handleZoomIn(event)
