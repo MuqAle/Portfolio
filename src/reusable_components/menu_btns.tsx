@@ -1,13 +1,31 @@
 import btnHighlight from '../images/buttons/menu_btn_highlight.svg'
 
-const MenuBtn = ({btnName,type}:{btnName:string,type:string}) => (
-     <button className={"menu-btn " + type}>
-        <img src={btnHighlight} alt="" />
-        <p>
+
+interface MenuBtnType {
+   btnName:string,
+   type:string,
+   onClick?:() => void,
+   link?:string
+}
+
+const MenuBtn = ({btnName,type,onClick,link}:MenuBtnType) => (
+
+      link ?
+     <a href={link} className={"menu-btn " + type} target="_blank" rel="noopener noreferrer">
+        <button >
+           <img src={btnHighlight} alt="" />
+           <p>
+            {btnName}
+           </p>
+        </button>
+     </a>
+     :
+     <button className={"menu-btn " + type} onClick={onClick}>
+     <img src={btnHighlight} alt="" />
+      <p>
          {btnName}
-        </p>
-        
-     </button>
+      </p>  
+      </button>
 )
 
 export default MenuBtn

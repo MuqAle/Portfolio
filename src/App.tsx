@@ -4,6 +4,7 @@ import "./stylessheet/css/reusuable-components.css"
 import "./stylessheet/css/home-menu.css"
 import "./stylessheet/css/navigation.css"
 import "./stylessheet/css/channel-overlay.css"
+import "./stylessheet/css/small-wii-box.css"
 import { useImmer } from "use-immer"
 import { animate, delay, motion } from "framer-motion"
 
@@ -19,7 +20,7 @@ function App() {
       scale: zoom ? 3 : 1,
       x: zoom ? `calc(150% - ${transformOrigin.x}px)` : 0,
       y: zoom ? `calc(150% - ${transformOrigin.y}px)` : 0,
-      transition:{
+      transition:{ 
         duration:.5
       }
     },

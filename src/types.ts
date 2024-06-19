@@ -23,7 +23,8 @@ interface ScrollButton{
     hoverLeaveStartX:number,
     exitInitialX:string,
     arrowDirection:string,
-    originX:number
+    originX:number,
+    zoom:boolean
 }
 
 interface HoverScrollHomeBtn{

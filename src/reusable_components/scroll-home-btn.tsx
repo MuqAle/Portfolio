@@ -1,17 +1,23 @@
-import { ReactNode } from "react"
+import { HoverScrollHomeBtn } from "../types"
 import btnHighlight from "../images/buttons/button_highlight.svg"
-import {delay, easeIn, motion} from "framer-motion"
+import {AnimationProps, motion} from "framer-motion"
 import { useImmer } from "use-immer"
 
 
 
 
-const ScrollHomeBtn = ({children,onClick,onHoverStart}:{children:ReactNode,onClick:() => void,onHoverStart:() => void}) => {
+const ScrollHomeBtn = ({
+    children,
+    onClick,
+    onHoverStart,
+    squishScaleX,
+    exitScaleX,
+    originX}:HoverScrollHomeBtn) => {
 
     const [isMouseDown, setIsMouseDown] = useImmer(false)
 
-    const variants = {
-        initial: { opacity: 0, scaleY: .87,scale:.8,originX:1},
+    const variants:AnimationProps['variants'] = {
+        initial: { opacity: 0, scaleY: .87,scale:.8,originX:originX},
         animate: { 
             opacity: 1, 
             scale:1.12, 
@@ -22,7 +28,7 @@ const ScrollHomeBtn = ({children,onClick,onHoverStart}:{children:ReactNode,onCli
                 ease:"easeInOut"
             }},
         squish:{
-            scaleX:[1,0.87,1,.95,1],
+            scaleX:squishScaleX,
             transition:{
                 delay:.05,
                 duration:.2,
@@ -31,10 +37,14 @@ const ScrollHomeBtn = ({children,onClick,onHoverStart}:{children:ReactNode,onCli
 
         },
         exit: { 
-            opacity: 0, scale:.8, scaleX:.8,
+            opacity: 0, 
+            scale:.8, 
+            scaleX:exitScaleX,
+            x:originX ? '5%':'-5%',
             transition:{
             duration:.09,
-            // delay:.05
+            delay:.1,
+            ease: "easeInOut"
         }},
       }
 
@@ -54,7 +64,7 @@ const ScrollHomeBtn = ({children,onClick,onHoverStart}:{children:ReactNode,onCli
         variants={variants}>
             {
                 !isMouseDown && (
-                    <div>
+                    <div className="image-container">
                     <img src={btnHighlight} className='btn-highlight' alt="Button Highlight"></img>
                     {children}
                     </div>

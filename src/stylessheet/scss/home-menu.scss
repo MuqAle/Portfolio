@@ -172,74 +172,10 @@ li{
     grid-template-rows: repeat(3,1fr); 
 }
 
-.wii-box{
-    // aspect-ratio: 650/356;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    .wii-outline,.wii-background{
-        // aspect-ratio: 650/356;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        object-fit: fill;
-    }
-    .empty{
-        z-index: 2;
-    }
-    .wii-background{
-        z-index: 0;
-        width: 98%;
-   
-    }
-    .wii-box-text{
-        position: absolute;
-        z-index: 0;
-        font-family: 'Wii Sans';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 3.5vw;
-        line-height: 47%;
-        /* or 108px */
-        display: flex;
-        align-items: center;
-        color: rgba(0, 0, 0, 0.05);
 
 
-    }
-    .wii-tv-animation{
-        height: 100%;
-        background-size: 100% 100%;
-        // clip-path: url(#tv-screen-clip);
-        clip-path: url(#custom-shape);
-        width: 98%;
-        position: absolute;
-        z-index: 1;
-        animation-duration: 40s;
-        animation-fill-mode: forwards;
-        animation-iteration-count: infinite;
-        animation-name: tvstatic;
-        animation-timing-function: linear;
-        background: linear-gradient(0deg, rgba(255,255,255,0.4) 0%, rgba(151,151,151,0.4) 50%, rgba(255,255,255,0.4) 100%);
-    }
-}
-
-.project-logo{
-    width: 60%;
-    aspect-ratio:325/178;
-  }
 
 
-@keyframes tvstatic {
-    0% {
-      background-position: 0% 0%
-    }
-    100% {
-      background-position: 0% 100vh
-    }
-  }
 
 
 //   Scroll Buttons

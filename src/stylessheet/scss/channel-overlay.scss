@@ -1,3 +1,5 @@
+@use 'reusuable-components';
+
 .wii-box-list{
     width: 100%;
     height:100%;
@@ -20,19 +22,6 @@
         width: 100vw;
         height: 100vh;
     }
-
-    .menu-btn{
-        font-size: .7vw;
-        height: 60%;
-        margin-top: -1.9%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        border: .01vw solid #34BEED;
-        box-shadow: inset .17vw .145vw 2vw #FFFFFF, inset 0 -.5vw .8vw .6vw #b1bccacc;
-
-    }
 }
 .shape-container {
     width: 100%;
@@ -41,9 +30,11 @@
     // background-color: black;
     overflow: hidden; /* Ensure no content overflows the shape */
     display: grid;
-    grid-template-rows: .75fr .25fr;
+    // grid-template-rows: calc(.76fr - .5px) calc(.24fr - .5px);
+    grid-template-rows: .76fr 1px .24fr;
     background-color: white;
 }
+
 svg {
     position: absolute;
     width: 0; /* Hide the SVG visually */
@@ -55,20 +46,48 @@ svg {
 }
 
 .channel-footer{
-    background-image: linear-gradient(to bottom, transparent 75%, white 25%),
+    background-image:
+    linear-gradient(to bottom, transparent 75%, white 25%),
     radial-gradient(circle, rgb(255, 255, 255) 0%, #c9c9c1 100%);
-    background-size: 100% 3.5%;
+    background-size:100% 3.5%;
     display: flex;
     justify-content: center;
     align-items: center;
+    // border-top: 1px black solid;
     gap: 5%;
-    // border-top: .5px solid black;
+    z-index: 1;
+
+}
+.divider{
+    background-image:
+    linear-gradient(to bottom,transparent 50%, black 50% );
+    // background-size:100% 50%;
+    overflow: hidden;
+    // margin-bottom: -1.5px;
 }
 
-.top-border{
-    height: .1%;
-    width: 100%;
-    position: absolute;
-    background-color: black;
-    bottom: 25%;
+.overlay-menu-btn{
+    border: none;
+    aspect-ratio: 	17/5;
+    font-size: .6vw;
+    background-color: transparent;
+    margin-top: -2%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100rem;
+    position: relative;
+    text-align: center;
+    font-family: reusuable-components.$menu-font-stack;
+    color: reusuable-components.$color;
+    cursor: pointer;
+    
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    p{
+        position: absolute;
+    }
 }

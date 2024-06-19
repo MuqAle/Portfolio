@@ -7,6 +7,7 @@ import leftScrollBtn from '../images/buttons/left-scroll-btn.svg'
 import ArrowButton from "../reusable_components/home-arrow-btn"
 import rightScrollBtn from '../images/buttons/right-scroll-btn.svg'
 import plus from '../images/buttons/plus-sign.svg'
+import PortfolioWiiBox from "./portfolio-wii-box"
 
 
 
@@ -51,9 +52,6 @@ const MainHomePage = ({setTransformOrigin,setZoom,zoom,transformOrigin}:
             const x = xZoom * 3
             const y = yZoom * 3
             setTransformOrigin({ x, y })
-        
-            console.log(top)
-            console.log(height)
         }
     
     }
@@ -98,32 +96,15 @@ const MainHomePage = ({setTransformOrigin,setZoom,zoom,transformOrigin}:
             <section className={"top-part" + (zoom ? ' no-scroll':'')} ref={wiiContainerRef}>
                 <div id="wii-box-main-container">
                     <div className="wii-box-container">
+                    <PortfolioWiiBox zoom={zoom}></PortfolioWiiBox>
                     <EcommerceProjectWiiBox
+                    setZoom={setZoom}
                     zoom={zoom}
                     onClick={(event) => {
                         event.stopPropagation()
                         handleZoomIn(event)
                       }}></EcommerceProjectWiiBox>
-                      <EcommerceProjectWiiBox
-                    zoom={zoom}
-                    onClick={(event) => {
-                        event.stopPropagation()
-                        handleZoomIn(event)
-                      }}></EcommerceProjectWiiBox>
-                      <EcommerceProjectWiiBox
-                    zoom={zoom}
-                    onClick={(event) => {
-                        event.stopPropagation()
-                        handleZoomIn(event)
-                      }}></EcommerceProjectWiiBox>
-                      <EcommerceProjectWiiBox
-                    zoom={zoom}
-                    onClick={(event) => {
-                        event.stopPropagation()
-                        handleZoomIn(event)
-                      }}></EcommerceProjectWiiBox>
-                      
-                    {[...Array(8)].map((_box,i) => (
+                    {[...Array(10)].map((_box,i) => (
                         <EmptyWiiBox key={i}></EmptyWiiBox>
                     ))}
                     </div>
@@ -131,34 +112,34 @@ const MainHomePage = ({setTransformOrigin,setZoom,zoom,transformOrigin}:
                         scrollFunction={scrollToEnd}
                         showBtn={showRightBtn}
                         rightParentVisible={rightParentVisible}
-                        hoverBtnTiming={hoverBtnTiming} 
+                        hoverBtnTiming={hoverBtnTiming}
                         arrowImg={rightScrollBtn}
-                        hoverBtnImg={plus} 
-                        bounceAnimationX={['0%','-5%','0%,5%']} 
-                        exitScaleX={.8} 
-                        squishScaleX={[1,0.87,1,.95,1]} 
-                        hoverLeaveStartScaleX={0.5} 
-                        hoverLeaveStartX={10} 
-                        exitInitialX={"50%"} 
+                        hoverBtnImg={plus}
+                        bounceAnimationX={['0%', '-5%', '0%,5%']}
+                        exitScaleX={.8}
+                        squishScaleX={[1, 0.87, 1, .95, 1]}
+                        hoverLeaveStartScaleX={0.5}
+                        hoverLeaveStartX={10}
+                        exitInitialX={"50%"}
                         arrowDirection={"right-scroll"}
-                        originX={1}>
+                        originX={1} zoom={zoom}>
                     </ArrowButton>
 
                     <ArrowButton
-                        scrollFunction={scrollToEnd} 
+                        scrollFunction={scrollToEnd}
                         showBtn={!showRightBtn}
                         rightParentVisible={!rightParentVisible}
-                        hoverBtnTiming={!hoverBtnTiming} 
+                        hoverBtnTiming={!hoverBtnTiming}
                         arrowImg={leftScrollBtn}
-                        hoverBtnImg={minus} 
-                        bounceAnimationX={['0%','5%','0%,-5%']} 
-                        exitScaleX={.8} 
-                        squishScaleX={[1,.87,1,.95,1]} 
-                        hoverLeaveStartScaleX={0.5} 
-                        hoverLeaveStartX={10} 
-                        exitInitialX={"-50%"} 
+                        hoverBtnImg={minus}
+                        bounceAnimationX={['0%', '5%', '0%,-5%']}
+                        exitScaleX={.8}
+                        squishScaleX={[1, .87, 1, .95, 1]}
+                        hoverLeaveStartScaleX={0.5}
+                        hoverLeaveStartX={10}
+                        exitInitialX={"-50%"}
                         arrowDirection={"left-scroll"}
-                        originX={0}>
+                        originX={0} zoom={zoom}>
                         
 
                     </ArrowButton>

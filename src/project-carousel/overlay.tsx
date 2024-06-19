@@ -1,49 +1,54 @@
-import { animate, delay, motion } from "framer-motion"
+import { animate, delay, motion, transform } from "framer-motion"
 import MenuBtn from "../reusable_components/menu_btns"
+import menuBtn from '../images/channel-overlay/button-wii-menu.svg'
+import { Updater } from "use-immer"
 
-const ChannelOverlay = ({onClick,zoom}:{
-    onClick:() => void,
-    zoom:boolean}) => {
+const ChannelOverlay = ({onClick,setZoom}:{
+    setZoom:Updater<boolean>,
+    onClick:() => void,}) => {
 
     const parentVariants = {
         initial:{
             opacity:0
         },
-        animate:{
+        firstAnimation:{
             opacity:1,
+            transition:{
+                duration:.2
+            }
+        },
+        secondAnimation:{
             scale:1.57,
+            transition:{
+                duration:.2
+      
+            },
+        },
+        firstExit:{
+            scale:1,
+
    
             transition:{
-                duration:.5
-            },
+                duration:.2,
+            }, 
 
         },
-        exit:{
+        secondExit:{
             opacity:0,
             transition:{
-                duration:.5
+                duration:.5,
             },
-
         }
     }
 
-    const childVariants = {
-        animate:{
-            
-            transform: 'translate(0, .1%)',
-            transition:{
-                duration:.5
-            },
 
-        },
-    }
     
     return(
     <motion.div  className="channel-parent-div"
     initial='initial'
-    exit='exit'
+    exit={['firstExit','secondExit']}
     variants={parentVariants}
-    animate='animate'>
+    animate={['firstAnimation','secondAnimation']}>
         <motion.div className="black-overlay"></motion.div>
         <svg>
             <defs>
@@ -53,16 +58,30 @@ const ChannelOverlay = ({onClick,zoom}:{
             </defs>
         </svg>
         <motion.div className="shape-container clip-path"
-            variants={childVariants}
-            animate='animate'
             >
             <div>
 
             </div>
+            <div className="divider"></div>
             <div className="channel-footer">
-                <div className="top-border"></div>
-                <MenuBtn btnName={"Muq Menu"} type={"channel"} onClick={onClick}></MenuBtn>
-                <MenuBtn btnName={"Start"} type={"channel"} ></MenuBtn>
+                
+                {/* <MenuBtn btnName={"Muq Menu"} type={"channel"} onClick={onClick}></MenuBtn>
+                <MenuBtn btnName={"Start"} type={"channel"} ></MenuBtn> */}
+                <motion.button className="overlay-menu-btn" 
+                whileHover={{scale:1.1}}
+                onClick={
+                    () => {
+                        onClick()
+                        setZoom(false)
+                    }}>
+                    <img src={menuBtn} alt="" />
+                    <p>Muq Menu</p>
+                </motion.button>
+                <motion.button className="overlay-menu-btn"
+                whileHover={{scale:1.1}}>
+                    <img src={menuBtn} alt="" />
+                    <p>Start</p>
+                </motion.button>
             </div>
         </motion.div>
     </motion.div>

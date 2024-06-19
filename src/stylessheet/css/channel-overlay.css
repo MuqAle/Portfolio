@@ -1,3 +1,114 @@
+@font-face {
+  font-family: "FOTRodinNTLG DB";
+  src: url("../../fonts/FOTRodinNTLGPro/FOTRodinNTLGProDB/RodinNTLGPro-DB-AlphaNum.woff") format("woff"), url("../../fonts/FOTRodinNTLGPro/FOTRodinNTLGProDB/RodinNTLGPro-DB-AlphaNum.woff2") format("woff2");
+}
+@font-face {
+  font-family: "WiiSans-Regular";
+  src: url("../../fonts/WiiSans-Regular-4.otf") format("opentype");
+}
+.home-btn {
+  border: #34beed solid 0.16vw;
+  border-radius: 50%;
+  background-color: #f5f4f4;
+  aspect-ratio: 1/1;
+  box-shadow: inset 0 0 0.6cqw 0.8cqw rgba(0, 0, 0, 0.054), inset -3cqw -3cqw 0.5cqw 0cqw rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.home-btn .btn-highlight {
+  aspect-ratio: 54/52;
+  width: 66%;
+  position: absolute;
+  right: 29%;
+  top: 6.5%;
+  z-index: 1;
+}
+
+.large-upside-down-home-btn-containers {
+  transform: rotate(180deg);
+  margin-right: -8.3%;
+  margin-top: 11%;
+}
+
+.small-upside-down-home-btn-containers {
+  margin-top: -30%;
+  transform: rotate(180deg);
+}
+
+.navigation-btn-container {
+  height: 21vh;
+  height: 21dvh;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4117647059) 25%, #D2D4DB 100%);
+  position: relative;
+  display: flex;
+  align-items: start;
+  border-top: #b3b6bc solid 0.5vw;
+  border-bottom: #b3b6bc solid 0.5vw;
+  position: relative;
+}
+.navigation-btn-container::before {
+  content: "";
+  position: absolute;
+  border-top: rgba(241, 241, 241, 0.2941176471) solid 0.5vw;
+  border-bottom: rgba(241, 241, 241, 0.2941176471) solid 0.5vw;
+  border-radius: 100rem;
+}
+.navigation-btn-container.left {
+  border-left: #b3b6bc solid 0.5vw;
+  border-radius: 100rem 0rem 0rem 100rem;
+}
+.navigation-btn-container.left::before {
+  border-left: rgba(241, 241, 241, 0.2941176471) solid 0.5vw;
+  border-radius: 100rem 0rem 0rem 100rem;
+  pointer-events: none;
+  z-index: 1;
+}
+.navigation-btn-container.right {
+  justify-content: flex-end;
+  border-right: #b3b6bc solid 0.5vw;
+  border-radius: 0rem 100rem 100rem 0rem;
+  align-items: start;
+}
+.navigation-btn-container.right::before {
+  border-right: rgba(241, 241, 241, 0.2941176471) solid 0.5vw;
+  border-radius: 0rem 100rem 100rem 0rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.menu-btn {
+  position: relative;
+  aspect-ratio: 546/148;
+  background: #e3e8ef;
+  border: 0.2vw solid #34BEED;
+  box-shadow: inset 0.5vw 0.45vw 3vw #FFFFFF, inset 0 -0.5vw 0.8vw 0.6vw rgba(177, 188, 202, 0.8);
+  border-radius: 100rem;
+  font-family: "FOTRodinNTLG DB", sans-serif;
+  color: #353a3b;
+  cursor: pointer;
+}
+.menu-btn p {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.menu-btn img {
+  aspect-ratio: 493/93;
+  position: absolute;
+  width: 90%;
+  z-index: 1;
+  opacity: 0.9;
+  right: 9%;
+  top: 5%;
+}
+
 .wii-box-list {
   width: 100%;
   height: 100%;
@@ -19,17 +130,6 @@
   width: 100vw;
   height: 100vh;
 }
-.channel-parent-div .menu-btn {
-  font-size: 0.7vw;
-  height: 60%;
-  margin-top: -1.9%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  border: 0.01vw solid #34BEED;
-  box-shadow: inset 0.17vw 0.145vw 2vw #FFFFFF, inset 0 -0.5vw 0.8vw 0.6vw rgba(177, 188, 202, 0.8);
-}
 
 .shape-container {
   width: 100%;
@@ -37,7 +137,7 @@
   position: relative;
   overflow: hidden; /* Ensure no content overflows the shape */
   display: grid;
-  grid-template-rows: 0.75fr 0.25fr;
+  grid-template-rows: 0.76fr 1px 0.24fr;
   background-color: white;
 }
 
@@ -58,14 +158,37 @@ svg {
   justify-content: center;
   align-items: center;
   gap: 5%;
+  z-index: 1;
 }
 
-.top-border {
-  height: 0.1%;
+.divider {
+  background-image: linear-gradient(to bottom, transparent 50%, black 50%);
+  overflow: hidden;
+}
+
+.overlay-menu-btn {
+  border: none;
+  aspect-ratio: 17/5;
+  font-size: 0.6vw;
+  background-color: transparent;
+  margin-top: -2%;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100rem;
+  position: relative;
+  text-align: center;
+  font-family: "FOTRodinNTLG DB", sans-serif;
+  color: #353a3b;
+  cursor: pointer;
+}
+.overlay-menu-btn img {
   width: 100%;
+  height: 100%;
+}
+.overlay-menu-btn p {
   position: absolute;
-  background-color: black;
-  bottom: 25%;
 }
 
 /*# sourceMappingURL=channel-overlay.css.map */
