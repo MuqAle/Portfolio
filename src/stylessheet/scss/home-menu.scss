@@ -45,8 +45,8 @@ body{
     justify-content: center;
     flex-direction: column;
     position: relative;
-    
-    
+    transition:transform .5s;
+    outline: 1px transparent;
 }
 
 #navigation{

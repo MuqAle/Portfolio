@@ -45,13 +45,15 @@ const MainHomePage = ({setTransformOrigin,setZoom}:
 
     const handleZoomIn = (event: React.FocusEvent<HTMLDivElement>) => {
         if(!zoom){
-            setZoom(true)
+            
             const { left, top, width, height } = event.currentTarget.getBoundingClientRect()
             const xZoom = left + width / 2
             const yZoom = top + height / 2
             const x = xZoom * 3
             const y = yZoom * 3
+            
             setTransformOrigin({ x, y })
+            setZoom(true)
         }
     
     }
