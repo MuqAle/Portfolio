@@ -5,6 +5,7 @@
     width: 100%;
     height:100%;
     position: relative;
+    cursor: pointer;
 }
 .channel-parent-div{
     display: flex;
@@ -29,17 +30,15 @@
     width: 100%;
     height: 100%;
     position: relative;
-    // background-color: black;
-    overflow: hidden; /* Ensure no content overflows the shape */
+    overflow: hidden; 
     display: grid;
-    // grid-template-rows: calc(.76fr - .5px) calc(.24fr - .5px);
-    grid-template-rows: .76fr 1px .24fr;
+    grid-template-rows: .76fr .24fr;
     background-color: white;
 }
 
 svg {
     position: absolute;
-    width: 0; /* Hide the SVG visually */
+    width: 0; 
     height: 0;
 }
 
@@ -56,16 +55,21 @@ svg {
     justify-content: center;
     align-items: center;
     // border-top: 1px black solid;
+    position: relative;
     gap: 5%;
     z-index: 1;
 
 }
 .divider{
-    background-image:
-    linear-gradient(to bottom,transparent 50%, black 50% );
-    // background-size:100% 50%;
-    overflow: hidden;
-    // margin-bottom: -1.5px;
+    // background-image:
+    // linear-gradient(black 20% ,white 10%);
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(0deg, transparent 80%, black 20%);
+    // background-size:100% 100%;
+    // overflow: hidden;
 }
 
 .overlay-menu-btn{
@@ -92,4 +96,59 @@ svg {
     p{
         position: absolute;
     }
+}
+.overlay-slide{
+    width: 100%;
+    height: 100%;
+}
+
+// Portfolio Wii Box
+
+.disc-overlay{
+    display: flex;
+    flex-direction: column;
+    .disc-channel-header{
+        width: 100%;
+        display: flex;
+        position: relative;
+        img{
+            width: 100%;
+        }
+        p{
+            position: absolute;
+            font-size: .4vw;
+            bottom: 8%;
+            right: 2.4vw;
+            color: white;
+            font-family: reusuable-components.$menu-font-stack;
+        }
+    }
+
+    .disc-channel-body{
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        
+        .disc-bg{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(0deg, rgb(227, 230, 230,.99) 0%, rgba(232,233,233,0.75) 18%, rgba(240, 240, 240, 0.5) 61%, rgba(255,255,255,0.5) 100%);
+            z-index: 1;
+        }
+        img{
+            position: absolute;
+            height: 60%;
+        }
+        .insert-disc{
+            z-index: 1;
+        }
+        .insert-disc-reflection{
+            bottom: -31%;
+            transform: scaleY(-1);
+            
+        }
+    }
+ 
 }

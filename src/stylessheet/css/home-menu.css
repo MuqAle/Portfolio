@@ -26,12 +26,15 @@ body {
 #root {
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
 }
 
 .main-container {
   background-color: #CECFD7;
-  height: 100vh;
-  height: 100dvh;
+  height: 100%;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -43,111 +46,89 @@ body {
 
 #navigation {
   position: absolute;
-  width: 100vw;
-  height: 26vh;
-  width: 100dvw;
+  height: 26%;
+  width: 100%;
   bottom: 0;
   margin-bottom: 3vh;
   z-index: 1;
 }
 
 #main-home-container {
-  height: 100vh;
-  width: 100vw;
-  height: 100dvh;
-  width: 100dvw;
+  height: 100%;
+  width: 100%;
   display: grid;
   grid-template-rows: 0.8fr 0.3fr;
 }
 #main-home-container .top-part {
+  display: flex;
   background-color: #f8f8f8;
   position: relative;
   z-index: 3;
   background-image: url(../../images/home-menu/background-lines.svg);
   background-position: center center;
   background-size: 100% auto;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-#main-home-container .top-part.no-scroll {
-  overflow: hidden;
-}
-#main-home-container .top-part::-webkit-scrollbar {
-  display: none;
 }
 #main-home-container .bottom-part {
   background-image: url(../../images/home-menu/home-page-tab.svg);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  aspect-ratio: 1920/200;
-  width: 100vw;
-  width: 100dvw;
+  background-size: contain;
+  background-position: top;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
 
 .time-container {
   display: flex;
-  align-self: start;
-  align-items: end;
+  align-items: center;
   justify-content: center;
   gap: 1vw;
-  gap: 1dvw;
-  height: 60%;
-  margin-top: -0.5%;
+  height: fit-content;
+  margin-top: 1.5%;
 }
 .time-container .time {
   font-family: "Digital-Display", sans-serif;
-  font-size: 7vw;
-  font-size: 7dvw;
+  font-size: 7.6rem;
   color: #9B9B9B;
-  margin-top: auto;
 }
 .time-container .time-period {
   font-family: "Monice", serif;
+  align-self: flex-end;
   color: #9B9B9B;
-  font-size: 2vw;
-  font-size: 2dvw;
+  font-size: 2.2rem;
   line-height: 1;
 }
 
-@supports (width: 1cqw) {
-  .time-container {
-    gap: 1cqw;
-  }
-  .time-container .time {
-    font-size: 7cqw;
-  }
-  .time-container .time-period {
-    font-size: 2cqw;
-  }
-}
 li {
   list-style: none;
 }
 
 #wii-box-main-container {
   height: 100%;
+  width: 100%;
   display: flex;
-  gap: 1.5vh;
-  bottom: 0;
-  position: absolute;
-  padding: 7vh 8.5vw 1.5vh 8.5vw;
 }
 
 .wii-box-container {
   display: grid;
-  gap: 1.5vh;
-  width: 83vw;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  overflow: auto;
+  row-gap: 2.35%;
+  column-gap: 1.01%;
+  padding: 3.99% 8.5009% 0.844%;
+  grid-template-columns: repeat(8, 24.238%);
+  grid-template-rows: repeat(3, 31.776%);
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.wii-box-container::-webkit-scrollbar {
+  display: none;
 }
 
 .scroll-main-btn-container {
-  height: 66vh;
-  width: 7.8vw;
+  height: 73.5%;
+  width: 8%;
   position: fixed;
   z-index: 3;
   display: flex;
@@ -161,27 +142,27 @@ li {
   right: 0;
 }
 .scroll-main-btn-container.right-scroll .scroll-btn-container {
-  margin-right: 95%;
+  margin-right: 50%;
   justify-content: end;
 }
 .scroll-main-btn-container.right-scroll .scroll-btn-container .home-btn {
   position: absolute;
-  right: 2vw;
+  right: 30%;
 }
 .scroll-main-btn-container.left-scroll {
   left: 0;
 }
 .scroll-main-btn-container.left-scroll .scroll-btn-container {
-  margin-left: 95%;
+  margin-left: 50%;
 }
 .scroll-main-btn-container.left-scroll .scroll-btn-container .home-btn {
-  left: 2vw;
+  left: 30%;
   position: absolute;
 }
 .scroll-main-btn-container .scroll-btn-container {
   width: 100%;
   height: 20%;
-  margin-bottom: 24%;
+  margin-bottom: -35%;
   display: flex;
   position: absolute;
   align-items: center;
@@ -203,7 +184,7 @@ li {
   width: fit-content;
 }
 .scroll-main-btn-container .home-btn {
-  border: #34beed solid 0.29vw;
+  border: #34beed solid 0.29rem;
 }
 .scroll-main-btn-container .home-btn.scroll {
   height: 115%;

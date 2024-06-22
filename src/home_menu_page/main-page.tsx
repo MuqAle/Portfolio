@@ -95,9 +95,9 @@ const MainHomePage = ({setTransformOrigin,setZoom}:
     
     return(
         <div id="main-home-container">
-            <section className={"top-part" + (zoom ? ' no-scroll':'')} ref={wiiContainerRef}>
+            <section className={"top-part" + (zoom ? ' no-scroll':'')} >
                 <div id="wii-box-main-container">
-                    <div className="wii-box-container">
+                    <div className="wii-box-container" ref={wiiContainerRef}>
                     <PortfolioWiiBox></PortfolioWiiBox>
                     <EcommerceProjectWiiBox
                     setZoom={setZoom}
@@ -105,7 +105,7 @@ const MainHomePage = ({setTransformOrigin,setZoom}:
                         event.stopPropagation()
                         handleZoomIn(event)
                       }}></EcommerceProjectWiiBox>
-                    {[...Array(10)].map((_box,i) => (
+                    {[...Array(22)].map((_box,i) => (
                         <EmptyWiiBox key={i}></EmptyWiiBox>
                     ))}
                     </div>
@@ -144,11 +144,6 @@ const MainHomePage = ({setTransformOrigin,setZoom}:
                         
 
                     </ArrowButton>
-                    <div className="wii-box-container">
-                    {[...Array(12)].map((_box,i) => (
-                        <EmptyWiiBox key={i} ></EmptyWiiBox>
-                    ))}
-                    </div> 
                     
                 </div>
             </section>
