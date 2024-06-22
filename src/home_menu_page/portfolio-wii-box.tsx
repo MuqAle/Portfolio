@@ -1,8 +1,8 @@
 import { useImmer } from "use-immer"
 import outline from '../images/home-menu/wii-box-border.svg'
-import discReflection from '../images/home-menu/wii-box-disc-reflection.svg'
-import discInBox from '../images/home-menu/wii-box-disc.svg'
-import disc from '../images/home-menu/disc.svg'
+import discReflection from '../images/channel-overlay/wii-box-disc-reflection.svg'
+import discInBox from '../images/channel-overlay/wii-box-disc.svg'
+import disc from '../images/channel-overlay/disc.svg'
 import { animate, motion } from "framer-motion"
 import { useEffect, useRef } from "react"
 import ZoomContext from "../zoom-context"

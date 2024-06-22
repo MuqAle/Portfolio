@@ -1,6 +1,7 @@
 import { motion} from "framer-motion"
 import menuBtn from '../images/channel-overlay/button-wii-menu.svg'
 import { Updater } from "use-immer"
+import PortfolioSlide from "./portfolio-slide"
 
 const ChannelOverlay = ({onClick,setZoom}:{
     setZoom:Updater<boolean>,
@@ -62,11 +63,10 @@ const ChannelOverlay = ({onClick,setZoom}:{
         exit='exit'
         animate={'animate'}
             >
-            <div>
-
-            </div>
-            <div className="divider"></div>
+            <PortfolioSlide></PortfolioSlide>
+            {/* <div className="divider"></div> */}
             <div className="channel-footer">
+            <div className="divider"></div>
                 <motion.button className="overlay-menu-btn" 
                 whileHover={{scale:1.1}}
                 onClick={

@@ -113,6 +113,7 @@
   width: 100%;
   height: 100%;
   position: relative;
+  cursor: pointer;
 }
 
 .channel-parent-div {
@@ -135,15 +136,15 @@
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: hidden; /* Ensure no content overflows the shape */
+  overflow: hidden;
   display: grid;
-  grid-template-rows: 0.76fr 1px 0.24fr;
+  grid-template-rows: 0.76fr 0.24fr;
   background-color: white;
 }
 
 svg {
   position: absolute;
-  width: 0; /* Hide the SVG visually */
+  width: 0;
   height: 0;
 }
 
@@ -157,13 +158,17 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   gap: 5%;
   z-index: 1;
 }
 
 .divider {
-  background-image: linear-gradient(to bottom, transparent 50%, black 50%);
-  overflow: hidden;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(0deg, transparent 80%, black 20%);
 }
 
 .overlay-menu-btn {
@@ -189,6 +194,56 @@ svg {
 }
 .overlay-menu-btn p {
   position: absolute;
+}
+
+.overlay-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.disc-overlay {
+  display: flex;
+  flex-direction: column;
+}
+.disc-overlay .disc-channel-header {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.disc-overlay .disc-channel-header img {
+  width: 100%;
+}
+.disc-overlay .disc-channel-header p {
+  position: absolute;
+  font-size: 0.4vw;
+  bottom: 8%;
+  right: 2.4vw;
+  color: white;
+  font-family: "FOTRodinNTLG DB", sans-serif;
+}
+.disc-overlay .disc-channel-body {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.disc-overlay .disc-channel-body .disc-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(0deg, rgba(227, 230, 230, 0.99) 0%, rgba(232, 233, 233, 0.75) 18%, rgba(240, 240, 240, 0.5) 61%, rgba(255, 255, 255, 0.5) 100%);
+  z-index: 1;
+}
+.disc-overlay .disc-channel-body img {
+  position: absolute;
+  height: 60%;
+}
+.disc-overlay .disc-channel-body .insert-disc {
+  z-index: 1;
+}
+.disc-overlay .disc-channel-body .insert-disc-reflection {
+  bottom: -31%;
+  transform: scaleY(-1);
 }
 
 /*# sourceMappingURL=channel-overlay.css.map */
