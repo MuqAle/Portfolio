@@ -8,7 +8,8 @@ import ArrowButton from "../reusable_components/home-arrow-btn"
 import rightScrollBtn from '../images/buttons/right-scroll-btn.svg'
 import plus from '../images/buttons/plus-sign.svg'
 import PortfolioWiiBox from "./portfolio-wii-box"
-import ZoomContext from "../zoom-context"
+import ZoomContext from "../context/zoom-context"
+import ViewPortContext from "../context/viewport-dimensions"
 
 
 
@@ -20,11 +21,13 @@ const MainHomePage = ({setTransformOrigin,setZoom}:
     setZoom:Updater<boolean>,}) => {
         
     const zoom = useContext(ZoomContext)
+    const viewportDimensions = useContext(ViewPortContext)
     const [time, setTime] = useImmer(new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' }))
     const [showRightBtn, setShowRightBtn] = useImmer(true)
     const [rightParentVisible,setRightParentVisible] = useImmer(true)
     const [hoverBtnTiming, setHoverBtnTiming] = useImmer(true)
-    const wiiContainerRef:LegacyRef<HTMLDivElement>  = useRef(null)
+    const wiiContainerRef:React.RefObject<HTMLDivElement>  = useRef(null)
+
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -47,11 +50,13 @@ const MainHomePage = ({setTransformOrigin,setZoom}:
         if(!zoom){
             
             const { left, top, width, height } = event.currentTarget.getBoundingClientRect()
-            const xZoom = left + width / 2
-            const yZoom = top + height / 2
+            const windowDimensions = {width:window.innerWidth, height:window.innerHeight}
+            const viewportWidth = (windowDimensions.width - viewportDimensions.width)/2
+            const viewportHeight = (windowDimensions.height - viewportDimensions.height)/2
+            const xZoom = left + (width / 2) - viewportWidth
+            const yZoom = top + (height / 2) - viewportHeight
             const x = xZoom * 3
             const y = yZoom * 3
-            
             setTransformOrigin({ x, y })
             setZoom(true)
         }
@@ -90,14 +95,14 @@ const MainHomePage = ({setTransformOrigin,setZoom}:
 
     const formatTime = time.split(' ')
 
-    const timeMarginLeft = formatTime[0].split(':')[0].length === 1 ? '7.5vw' : '5.5vw'
+    const timeMarginLeft = formatTime[0].split(':')[0].length === 1 ? '4.1rem' : '.7rem'
 
     
     return(
-        <div id="main-home-container">
+        <div id="main-home-container" >
             <section className={"top-part" + (zoom ? ' no-scroll':'')} >
                 <div id="wii-box-main-container">
-                    <div className="wii-box-container" ref={wiiContainerRef}>
+                    <div className="wii-box-container" ref={wiiContainerRef} style={{overflowX:zoom ? 'hidden':'scroll'}}>
                     <PortfolioWiiBox></PortfolioWiiBox>
                     <EcommerceProjectWiiBox
                     setZoom={setZoom}

@@ -10,9 +10,9 @@
 }
 #navigation #navigation-date {
   font-family: "FOTRodinNTLGProB", sans-serif;
-  font-size: 2.8cqw;
-  width: 100vw;
-  margin-bottom: 0.4%;
+  font-size: 3rem;
+  width: 100%;
+  margin-bottom: 1%;
   text-wrap: nowrap;
   color: #787879;
   position: absolute;
@@ -25,49 +25,49 @@
   position: absolute;
 }
 #navigation .navigation-big-container.left-side {
-  left: -29vw;
+  left: -29rem;
   transform-origin: 58% 50%;
 }
 #navigation .navigation-big-container.right-side {
-  right: -26vw;
+  right: -26rem;
 }
 #navigation .navigation-big-container .navigation-btn-container.left-side.left {
-  padding-left: 2vw;
-  padding-right: 7.5vw;
+  padding-left: 2rem;
+  padding-right: 7.5rem;
 }
 #navigation .navigation-big-container .navigation-btn-container.left-side.right {
-  padding-right: 2vw;
-  padding-left: 7.5vw;
+  padding-right: 2rem;
+  padding-left: 7.5rem;
 }
 #navigation .navigation-big-container .navigation-btn-container.right-side.right {
-  padding-left: 10vw;
+  padding-left: 10rem;
 }
 #navigation .navigation-big-container .navigation-btn-container.right-side.left {
-  padding-right: 10vw;
+  padding-right: 10rem;
 }
 #navigation .navigation-big-container .navigation-btn-container.left-side.left::before {
-  top: 0.5vw;
-  left: 0.25vw;
-  bottom: -1vw;
-  right: 0.25vw;
+  top: 0.5rem;
+  left: 0.25rem;
+  bottom: -1rem;
+  right: 0.25rem;
 }
 #navigation .navigation-big-container .navigation-btn-container.left-side.right::before {
-  top: -1vw;
-  left: 0.25vw;
-  bottom: 0.5vw;
-  right: 0.25vw;
+  top: -1rem;
+  left: 0.25rem;
+  bottom: 0.5rem;
+  right: 0.25rem;
 }
 #navigation .navigation-big-container .navigation-btn-container.right-side.left::before {
-  top: -1vw;
-  left: -1vw;
-  bottom: 0.5vw;
-  right: -1vw;
+  top: -1rem;
+  left: -1rem;
+  bottom: 0.5rem;
+  right: -1rem;
 }
 #navigation .navigation-big-container .navigation-btn-container.right-side.right::before {
-  top: 0.5vw;
-  left: -1vw;
-  bottom: -1vw;
-  right: -1vw;
+  top: 0.5rem;
+  left: -1rem;
+  bottom: -1rem;
+  right: -1rem;
 }
 #navigation .navigation-big-container .navigation-btn-container .navigation-small-btn-container {
   display: flex;
@@ -77,20 +77,20 @@
   margin-bottom: 1%;
 }
 #navigation .home-btn.medium, #navigation .home-btn.large, #navigation .home-btn.small {
-  box-shadow: 0.7cqw 0.8cqw 0.1cqw -0.2cqw rgba(0, 0, 0, 0.1294117647), inset 0 0 0.6cqw 0.8cqw rgba(0, 0, 0, 0.054), inset -3cqw -3cqw 0.5cqw 0cqw rgba(0, 0, 0, 0.05);
+  box-shadow: 0.75rem 0.85rem 0.15rem -0.25rem rgba(0, 0, 0, 0.1294117647), inset 0 0 0.6rem 0.8rem rgba(0, 0, 0, 0.054), inset -3cqw -3cqw 0.5cqw 0cqw rgba(0, 0, 0, 0.05);
 }
 #navigation .home-btn.medium {
-  height: 16.6666666667vh;
+  height: 9.375rem;
 }
 #navigation .home-btn.large {
-  height: 19.0476190476vh;
+  height: 10.7142857143rem;
 }
 #navigation .home-btn.large img:last-child {
   width: 60%;
   aspect-ratio: 53/38;
 }
 #navigation .home-btn.small {
-  height: 14.8148148148vh;
+  height: 8.3333333333rem;
 }
 #navigation .home-btn.small img:last-child {
   aspect-ratio: 54/53;
@@ -100,7 +100,7 @@
   z-index: 0;
   text-align: center;
   font-family: "WiiSans-Regular", sans-serif;
-  font-size: 5.4166666667vh;
+  font-size: 3.0925rem;
   color: #999999;
 }
 

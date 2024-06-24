@@ -17,9 +17,9 @@
 
     #navigation-date{
         font-family: 'FOTRodinNTLGProB', sans-serif;
-        font-size: 2.8cqw;
-        width: 100vw;
-        margin-bottom: .4%;
+        font-size: 3rem;
+        width: 100%;
+        margin-bottom: 1%;
         text-wrap: nowrap;
         color: #787879;
         position: absolute;
@@ -35,59 +35,60 @@
         position: absolute;
 
         &.left-side{
-            left: -29vw;
+            // left: -29vw;
+            left: -29rem;
             transform-origin: 58% 50% ;
         }
 
         &.right-side{
-            right: -26vw;
+            right: -26rem;
         }
 
         .navigation-btn-container{
                 
         &.left-side.left{
-            padding-left: 2vw;
-            padding-right: 7.5vw;
+            padding-left: 2rem;
+            padding-right: 7.5rem;
         }
         &.left-side.right{
-            padding-right: 2vw;
-            padding-left: 7.5vw;
+            padding-right: 2rem;
+            padding-left: 7.5rem;
             
         }
         &.right-side.right{
-            padding-left: 10vw;
+            padding-left: 10rem;
         }
         &.right-side.left{
-            padding-right: 10vw;
+            padding-right: 10rem;
 
         }
 
         &.left-side.left::before{
-            top: .5vw;
-            left: .25vw;
-            bottom: -1vw;
-            right: .25vw;
+            top: .5rem;
+            left: .25rem;
+            bottom: -1rem;
+            right: .25rem;
         }
 
         &.left-side.right::before{
-            top: -1vw;
-            left: .25vw;
-            bottom: .5vw;
-            right: .25vw;
+            top: -1rem;
+            left: .25rem;
+            bottom: .5rem;
+            right: .25rem;
         }
 
         &.right-side.left::before{
-            top: -1vw;
-            left: -1vw;
-            bottom: .5vw;
-            right: -1vw;
+            top: -1rem;
+            left: -1rem;
+            bottom: .5rem;
+            right: -1rem;
         }
 
         &.right-side.right::before{
-            top: .5vw;
-            left: -1vw;
-            bottom: -1vw;
-            right: -1vw;
+            top: .5rem;
+            left: -1rem;
+            bottom: -1rem;
+            right: -1rem;
         }
 
 
@@ -105,15 +106,15 @@
     .home-btn{
 
         &.medium,&.large,&.small{
-            box-shadow: .7cqw .8cqw .1cqw -.2cqw #00000021, inset 0 0 .6cqw .8cqw rgba(0, 0, 0, 0.054), inset -3cqw -3cqw .5cqw 0cqw rgba(0,0,0,0.05);
+            box-shadow: .75rem .85rem .15rem -.25rem #00000021, inset 0 0 .6rem .8rem rgba(0, 0, 0, 0.054), inset -3cqw -3cqw .5cqw 0cqw rgba(0,0,0,0.05);
         }
     
         &.medium{
-            height: calc(20vh/1.2);
+            height: calc(11.25rem/1.2);
         }
     
         &.large{
-            height: calc(20vh/1.05);
+            height: calc(11.25rem/1.05);
             // transform: rotate(180deg) ;
            
     
@@ -125,7 +126,7 @@
     
         &.small{
             // transform: rotate(180deg) ;
-            height: calc(20vh/1.35);
+            height: calc(11.25rem/1.35);
         
         }
     
@@ -141,7 +142,7 @@
             z-index: 0;
             text-align: center;
             font-family: "WiiSans-Regular", sans-serif;
-            font-size: calc(6.5vh/1.2);
+            font-size: calc(3.711rem/1.2);
             color: #999999;
         }
     }

@@ -4,7 +4,7 @@ import logo from '../images/home-menu/ecommerce-project-logo.svg'
 import {AnimatePresence, motion, useAnimation} from "framer-motion"
 import ChannelOverlay from '../project-carousel/overlay'
 import { useContext, useEffect } from 'react'
-import ZoomContext from '../zoom-context'
+import ZoomContext from '../context/zoom-context'
 
 const EcommerceProjectWiiBox = ({onClick,setZoom}: {
   onClick:(event: any) => void,

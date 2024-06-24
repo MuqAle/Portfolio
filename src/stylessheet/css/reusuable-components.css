@@ -7,7 +7,7 @@
   src: url("../../fonts/WiiSans-Regular-4.otf") format("opentype");
 }
 .home-btn {
-  border: #34beed solid 0.16vw;
+  border: #34beed solid 0.25rem;
   border-radius: 50%;
   background-color: #f5f4f4;
   aspect-ratio: 1/1;
@@ -39,53 +39,56 @@
   transform: rotate(180deg);
 }
 
+.navigation-big-container {
+  height: 80.78%;
+}
+
 .navigation-btn-container {
-  height: 21vh;
-  height: 21dvh;
+  height: 100%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.4117647059) 25%, #D2D4DB 100%);
   position: relative;
   display: flex;
   align-items: start;
-  border-top: #b3b6bc solid 0.5vw;
-  border-bottom: #b3b6bc solid 0.5vw;
+  border-top: #b3b6bc solid 0.5rem;
+  border-bottom: #b3b6bc solid 0.5rem;
   position: relative;
 }
 .navigation-btn-container::before {
   content: "";
   position: absolute;
-  border-top: rgba(241, 241, 241, 0.2941176471) solid 0.5vw;
-  border-bottom: rgba(241, 241, 241, 0.2941176471) solid 0.5vw;
+  border-top: rgba(241, 241, 241, 0.2941176471) solid 0.5rem;
+  border-bottom: rgba(241, 241, 241, 0.2941176471) solid 0.5rem;
   border-radius: 100rem;
 }
 .navigation-btn-container.left {
-  border-left: #b3b6bc solid 0.5vw;
+  border-left: #b3b6bc solid 0.5rem;
   border-radius: 100rem 0rem 0rem 100rem;
 }
 .navigation-btn-container.left::before {
-  border-left: rgba(241, 241, 241, 0.2941176471) solid 0.5vw;
+  border-left: rgba(241, 241, 241, 0.2941176471) solid 0.5rem;
   border-radius: 100rem 0rem 0rem 100rem;
   pointer-events: none;
   z-index: 1;
 }
 .navigation-btn-container.right {
   justify-content: flex-end;
-  border-right: #b3b6bc solid 0.5vw;
+  border-right: #b3b6bc solid 0.5rem;
   border-radius: 0rem 100rem 100rem 0rem;
   align-items: start;
 }
 .navigation-btn-container.right::before {
-  border-right: rgba(241, 241, 241, 0.2941176471) solid 0.5vw;
+  border-right: rgba(241, 241, 241, 0.2941176471) solid 0.5rem;
   border-radius: 0rem 100rem 100rem 0rem;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
 .menu-btn {
   position: relative;
   aspect-ratio: 546/148;
   background: #e3e8ef;
-  border: 0.2vw solid #34BEED;
-  box-shadow: inset 0.5vw 0.45vw 3vw #FFFFFF, inset 0 -0.5vw 0.8vw 0.6vw rgba(177, 188, 202, 0.8);
+  border: 0.2rem solid #34BEED;
+  box-shadow: inset 0.5rem 0.45rem 3rem #FFFFFF, inset 0 -0.5rem 0.8rem 0.6rem rgba(177, 188, 202, 0.8);
   border-radius: 100rem;
   font-family: "FOTRodinNTLG DB", sans-serif;
   color: #353a3b;

@@ -17,7 +17,7 @@ $color:#353a3b;
 // Round Buttons
 
 .home-btn{
-    border:#34beed solid .16vw;
+    border:#34beed solid .25rem;
     border-radius: 50%;
     background-color: #f5f4f4;
     aspect-ratio: 1/1;
@@ -53,35 +53,37 @@ $color:#353a3b;
 
 
 // Navigation Container
-
+.navigation-big-container{
+    // height: 11.813rem;
+    height: 80.78%;
+}
 .navigation-btn-container{
-    height:21vh;
-    height: 21dvh;
 
+    height: 100%;
     background: linear-gradient(180deg, #ffffff69 25% ,#D2D4DB 100%);
     position: relative;
     display: flex;
     align-items: start;
-    border-top:#b3b6bc solid .5vw;
-    border-bottom: #b3b6bc solid .5vw;
+    border-top:#b3b6bc solid .5rem;
+    border-bottom: #b3b6bc solid .5rem;
     position: relative;
 
 
     &::before{
         content: '';
         position: absolute;
-        border-top:#f1f1f14b  solid .5vw;
-        border-bottom: #f1f1f14b solid .5vw;
+        border-top:#f1f1f14b  solid .5rem;
+        border-bottom: #f1f1f14b solid .5rem;
         border-radius: 100rem;
     }
 
 
     &.left{          
-        border-left: #b3b6bc solid .5vw;
+        border-left: #b3b6bc solid .5rem;
         border-radius: 100rem 0rem 0rem 100rem;
 
         &::before{
-             border-left: #f1f1f14b solid .5vw;
+             border-left: #f1f1f14b solid .5rem;
             border-radius: 100rem 0rem 0rem 100rem;
 
             pointer-events: none;
@@ -92,15 +94,15 @@ $color:#353a3b;
 
     &.right{
         justify-content: flex-end;
-        border-right: #b3b6bc solid .5vw;
+        border-right: #b3b6bc solid .5rem;
         border-radius: 0rem 100rem 100rem 0rem;
         align-items: start;
         &::before{
             
-            border-right: #f1f1f14b solid .5vw;
+            border-right: #f1f1f14b solid .5rem;
             border-radius: 0rem 100rem 100rem 0rem;
             pointer-events: none;
-            z-index: 1;
+            z-index: 0;
         }
     }
 
@@ -114,8 +116,8 @@ $color:#353a3b;
     position: relative;
     aspect-ratio: 546/148; 
     background: #e3e8ef;
-    border: .2vw solid #34BEED;
-    box-shadow: inset .5vw .45vw 3vw #FFFFFF, inset 0 -.5vw .8vw .6vw #b1bccacc;
+    border: .2rem solid #34BEED;
+    box-shadow: inset .5rem .45rem 3rem #FFFFFF, inset 0 -.5rem .8rem .6rem #b1bccacc;
     border-radius: 100rem;
     font-family: "FOTRodinNTLG DB", sans-serif;
     color: #353a3b;

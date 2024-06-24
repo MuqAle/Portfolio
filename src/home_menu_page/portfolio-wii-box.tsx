@@ -5,8 +5,9 @@ import discInBox from '../images/channel-overlay/wii-box-disc.svg'
 import disc from '../images/channel-overlay/disc.svg'
 import { animate, motion } from "framer-motion"
 import { useEffect, useRef } from "react"
-import ZoomContext from "../zoom-context"
+import ZoomContext from "../context/zoom-context"
 import { useContext } from "react"
+import ViewPortContext from "../context/viewport-dimensions"
 
 const PortfolioWiiBox = () => {
       const [active, setActive] = useImmer(false)
@@ -15,11 +16,12 @@ const PortfolioWiiBox = () => {
       const ref:React.LegacyRef<HTMLDivElement> = useRef(null) 
       const imageRef:React.LegacyRef<HTMLImageElement> = useRef(null) 
       const zoom = useContext(ZoomContext)
+      const viewPostDimension = useContext(ViewPortContext)
 
       const updatePosition = () =>{
         if(ref.current && imageRef.current){
-            const height =  ref.current.getBoundingClientRect().height
-            const imageHeight = imageRef.current.getBoundingClientRect().height
+            const height = ref.current.getBoundingClientRect().height  
+            const imageHeight = imageRef.current.getBoundingClientRect().height 
             const position = (height - imageHeight) * .5
             setTop(position)
         }
@@ -28,11 +30,13 @@ const PortfolioWiiBox = () => {
       useEffect(() => {
         
         const handleResize = () => {
-            updatePosition()
+          requestAnimationFrame(updatePosition);
           }
-          updatePosition()
-      
+          requestAnimationFrame(updatePosition);
+
+
           window.addEventListener('resize', handleResize)
+          
       
           return () => {
             window.removeEventListener('resize', handleResize)

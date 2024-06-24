@@ -21,8 +21,8 @@
     .black-overlay{
         position: fixed;
         background-color: black;
-        width: 300vw;
-        height: 300vh;
+        width: 150vw;
+        height: 150vh;
     }
 
 }
@@ -49,7 +49,7 @@ svg {
 .channel-footer{
     background-image:
     linear-gradient(to bottom, transparent 75%, white 25%),
-    radial-gradient(circle, rgb(255, 255, 255) 0%, #c9c9c1 100%);
+    radial-gradient(circle, #ffffff 0%, #c9c9c1 100%);
     background-size:100% 3.5%;
     display: flex;
     justify-content: center;
@@ -64,10 +64,10 @@ svg {
     // background-image:
     // linear-gradient(black 20% ,white 10%);
     width: 100%;
-    height: 1px;
+    height: .1rem;
     position: absolute;
     top: 0;
-    background: linear-gradient(0deg, transparent 80%, black 20%);
+    background: linear-gradient(0deg, transparent 80%, #000000 20%);
     // background-size:100% 100%;
     // overflow: hidden;
 }
@@ -111,14 +111,15 @@ svg {
         width: 100%;
         display: flex;
         position: relative;
+        top: -.4%;
         img{
             width: 100%;
         }
         p{
             position: absolute;
-            font-size: .4vw;
+            font-size: .4rem;
             bottom: 8%;
-            right: 2.4vw;
+            right: 2.4rem;
             color: white;
             font-family: reusuable-components.$menu-font-stack;
         }
