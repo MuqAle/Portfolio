@@ -45,13 +45,12 @@ const MainHomePage = ({setTransformOrigin,setZoom}:
         }
     },[])
 
-
+// Calculates the point  of transform origin in respective to viewport of the container
     const handleZoomIn = (event: React.FocusEvent<HTMLDivElement>) => {
         if(!zoom){
-            
             const { left, top, width, height } = event.currentTarget.getBoundingClientRect()
             const windowDimensions = {width:window.innerWidth, height:window.innerHeight}
-            const viewportWidth = (windowDimensions.width - viewportDimensions.width)/2
+            const viewportWidth = (windowDimensions.width - viewportDimensions.width)/2 //divide by 2, take the top area and bottom
             const viewportHeight = (windowDimensions.height - viewportDimensions.height)/2
             const xZoom = left + (width / 2) - viewportWidth
             const yZoom = top + (height / 2) - viewportHeight
@@ -63,6 +62,7 @@ const MainHomePage = ({setTransformOrigin,setZoom}:
     
     }
 
+// Scrolls to the end of the div and sets timing of when the arrow button should dissapear for aniamtions
     const scrollToEnd = () => {
         setRightParentVisible(!rightParentVisible)
         if(wiiContainerRef.current){
@@ -94,8 +94,9 @@ const MainHomePage = ({setTransformOrigin,setZoom}:
 
 
     const formatTime = time.split(' ')
-
-    const timeMarginLeft = formatTime[0].split(':')[0].length === 1 ? '4.1rem' : '.7rem'
+    const hour = formatTime[0].split(':')[0]
+    const minutes = formatTime[0].split(':')[1]
+    const timeMarginLeft = hour.length === 1 ? '4.5rem' : '1.1rem'
 
     
     return(
@@ -155,7 +156,11 @@ const MainHomePage = ({setTransformOrigin,setZoom}:
             <section className='bottom-part'>
                 <div className="time-container"
                 style={{marginLeft:timeMarginLeft}}>
-                    <p className="time">{formatTime[0]}</p>
+                    <p className="time">
+                        {hour}
+                        <span>:</span>
+                        {minutes}
+                    </p>
                     <p className="time-period">{formatTime[1]}</p>
                 </div>
             </section>
